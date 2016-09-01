@@ -2,18 +2,6 @@
 <!--
   Material Design Lite
   Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
 -->
 <html lang="en">
   <head>
@@ -21,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>UI-dash</title>
 
 
 
@@ -191,7 +179,7 @@
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
+          <img src="img/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>hello@example.com</span>
             <div class="mdl-layout-spacer"></div>
@@ -221,9 +209,6 @@
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
-
-
-
 
 
         <div class="mdl-grid demo-content">
@@ -315,7 +300,7 @@
       var showLC = function() {
         lc = LC.init(containerOne, {
           snapshot: JSON.parse(localStorage.getItem('drawing')),
-          imageURLPrefix: 'images/lc-images',
+          imageURLPrefix: 'img/lc-images',
           defaultStrokeWidth: 5,
           strokeWidths: [1, 5, 10],
           secondaryColor: 'transparent'
@@ -326,7 +311,7 @@
 
 
 // ----------------------------
-        });
+        }); 
         window.demoLC = lc;
 
         var save = function() {
@@ -338,21 +323,28 @@
         lc.on('zoom', save);
 
          $("#open-image").click(function() {
-           window.open(lc.getImage({
-             scale: 1, margin: {top: 10, right: 10, bottom: 10, left: 10}
-          }).toDataURL());
+         window.open(lc.getImage({
+         scale: 1, margin: {top: 10, right: 10, bottom: 10, left: 10}
+        }).toDataURL());
         });
+
 
         $("#save-image").click(function() {
           // var drawing = document.getElementById('literally');
-        var drawing =JSON.stringify(lc.getSnapshot());
-        console.log(drawing)
-
-        return drawing;
+        var custTemp =JSON.stringify(lc.getSnapshot());
+        console.log(custTemp)
         
         });
+         
 
-        $("#change-size").click(function() {
+
+        //  $("#open-image").click(function() {
+        //   var loadImage = lc.loadSnapshot(JSON.parse('drawing'));
+        //   console.log();
+           
+        // });
+
+         $("#change-size").click(function() {
           lc.setImageSize(null, 200);
         });
 
@@ -605,37 +597,27 @@
     <script type="text/javascript">
       
 
-      var tools;
-      tools =[
-          {
-            name: 'tool-select',
-            el: document.getElementById('tool-select'),
-            tool: new LC.tools.SelectShape(lc)
-          }
-              ];
+      // var tools;
+      // tools =[
+      //     {
+      //       name: 'tool-select',
+      //       el: document.getElementById('tool-select'),
+      //       tool: new LC.tools.SelectShape(lc)
+      //     }
+      //         ];
 
 
+      // var lc = LC.init(document.getElementById("lc"), {
+      //   imageURLPrefix: 'images/lc-images',
+      //   toolbarPosition: 'bottom',
+      //   defaultStrokeWidth: 2,
+      //   strokeWidths: [1, 2, 3, 5]
+      // });
 
-      
-
-
-
-
-
-
-
-
-      var lc = LC.init(document.getElementById("lc"), {
-        imageURLPrefix: 'images/lc-images',
-        toolbarPosition: 'bottom',
-        defaultStrokeWidth: 2,
-        strokeWidths: [1, 2, 3, 5]
-      });
-
-      var save = function() {
-          lc.getsnapshotJSON(drawing);
-          console.log(drawing)
-        }
+      // var save = function() {
+      //     lc.getsnapshotJSON(drawing);
+      //     console.log(drawing)
+      //   }
 
 
     </script>
