@@ -11,10 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>UI-dash</title>
 
-
-
-
-    
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -54,12 +50,14 @@
     
     <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
     <!-- <link rel="stylesheet" href="material.min.js"> -->
+<link rel="stylesheet" href="css/style.css">
+ 
+
   <!--Start literally Canvas -->
     <link href="css/literallycanvas.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- End  -->
-    <link rel="stylesheet" href="style.css">
-    <style>
+      <style>
     #view-source {
       position: fixed;
       display: block;
@@ -90,7 +88,7 @@
         position: relative;
       }
        /*End of Literally Canvas*/
-.fs-container {
+      .fs-container {
        /*width: 1000px;
        margin: 50px;*/
       }
@@ -194,7 +192,7 @@
             </ul>
           </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+        <nav class="demo-navigation mdl-navigation mdl-color--indigo-800">
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
@@ -208,13 +206,20 @@
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
       </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
+      <main class="mdl-layout__content mdl-color--white">
 
 
-        <div class="mdl-grid demo-content">
+        <div class="mdl-grid demo-content"> 
 
+          <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+         <div id="customer">
+          <h3> Jane Miller<h3>
+          </div>
+          <div id="customer-address">
+          <h4> 2900 CopperRige Ct, Longwood, Fl<h4>
+          </div>
+           </div>
 
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
 
 
             <!-- <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop"> -->
@@ -235,7 +240,7 @@
             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
               
             </svg> -->
-          </div>
+         
           <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
 
 <!-- Start litterally Canvas html -->
@@ -533,7 +538,7 @@
               </div> -->
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
-            <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+            <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
                 <h3>Job Specs</h3>
                 <ul>
