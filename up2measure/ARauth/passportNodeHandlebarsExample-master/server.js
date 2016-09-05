@@ -3,7 +3,6 @@ var flash = require('connect-flash');
 var app = express();
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
-var firebase = require("firebase");
 var passport = require('passport');
 var session = require('express-session');
 var orm = require('./db/orm.js');
@@ -36,16 +35,10 @@ app.use(express.static('public'));
 
 //Routes-----------------------------------------------------------
 require('./routes/html-routes.js')(app);
-
 //-----------------------------------------------------------------
+
 orm.connectToDB();
 
 app.listen(PORT, function(){
 	console.log('listening on port', PORT)
 });
-
-// Initialize Firebase
-// TODO: Replace with your project's customized code snippet
-
-
-

@@ -83,7 +83,7 @@ module.exports = function(app){
 		}
 	});
 // come back to this function sure how and why?---------------------------------------------------------------
-	app.post('/newCustomer', function (req, res) {
+	app.post('/dash', function (req, res) {
 		   if (req.isAuthenticated()) {
 			console.log(req.body.descInput)
 			ormdb.insertOne(req.user.userId, req.body._______, req.body._________, req.body._________, req.body.wholeSaleInput,req.body.retailPriceInput, req.body.inStockInput, req.body.mRPInput, function(result){			    
@@ -96,6 +96,43 @@ module.exports = function(app){
 			
 
 	}); // end  app.post (create)
+
+	app.get('/dash', function(req, res){
+		if (req.isAuthenticated()) {
+			console.log(req.user.userId);
+			res.render('dash', {
+				
+			});
+		}
+		else {
+			res.redirect('/verify');
+			
+		}
+	});
+
+	app.post('/update/:id', function (req, res) {
+		    //connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [true, req.params.id]);            
+            //orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
+            console.log('not ready for this function yet')	
+           	res.redirect('/dash');
+ 			//});
+    });// end  app.post (update)
+		    		
+	
+	app.post('/create', function (req, res) {
+		   if (req.isAuthenticated()) {
+			console.log(req.body.descInput)
+			ormdb.insertOne(req.user.userId, req.body.nameInput, req.body.descInput, req.body.groupInput, req.body.wholeSaleInput,req.body.retailPriceInput, req.body.inStockInput, req.body.mRPInput, function(result){			    
+					res.redirect('/dash'); 
+		    }); 
+		} else {
+			res.redirect('/verify')
+		}
+		   
+			
+
+	}); // end  app.post (create)
+
 
 	app.post('/delete/:id', function (req, res) {
 			   if (req.isAuthenticated()) {
