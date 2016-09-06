@@ -138,7 +138,7 @@ module.exports = function(app){
 			   if (req.isAuthenticated()) {
 				
 				ormdb.deleteOne(req.params.id, function(result){			    
-						res.redirect('/dash'); 
+						res.redirect('/dash.html'); 
 			    }); 
 			} else {
 				res.redirect('/verify')
