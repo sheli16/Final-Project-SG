@@ -1,15 +1,15 @@
-var logSignInfo = require('verify');
-var userdash = require('dash');
+// var logSignInfo = require('verify');
+// var userdash = require('dash');
 
-window.onload();
+// window.onload();
 
-$('#btn btn-xl').on('click', function(){
-	 myFunction();
-})
+// $('#btn btn-xl').on('click', function(){
+// 	 myFunction();
+// })
 
-function myFunction() {
-    var myWindow = window.open("/dash.html","");
-}
+// function myFunction() {
+//     var myWindow = window.open("/dash.html","");
+// }
 
 // -----code pulled from uer.js file from the passport example from ari-------------------------------------------------------------------------
 
