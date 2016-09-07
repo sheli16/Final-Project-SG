@@ -3,6 +3,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var orm = require('../db/orm.js');
 var ormdb = require('../db/ormdb.js');
+var React = require('react');
+var ReactDOM = require('react-dom');
+// ReactDOM.render(<App/>, ...); 
 
 //Setting the strategy for Passport
 passport.use(new LocalStrategy({passReqToCallback : true},
