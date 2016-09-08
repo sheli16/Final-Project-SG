@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS jobs(
     jobSink varchar(30) NOT NULL,
     jobEdge varchar(30) NOT NULL,
     jobSqft integer(10) NOT NULL,
+    jobImage varchar(2000) NOT NULL,
    
     PRIMARY KEY (id)
  

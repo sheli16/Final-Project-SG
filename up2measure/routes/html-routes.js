@@ -74,7 +74,7 @@ module.exports = function(app){
 		if (req.isAuthenticated()) {
 			
 			ormdb.selectAll(req.user.userId, function(result){
-		            res.render('dash', {
+		            res.render('dash.html', {
 		            	jobs1: result
 		            });
 			});
@@ -115,25 +115,24 @@ module.exports = function(app){
 
 	app.post('/update/:id', function (req, res) {
 		    //connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [true, req.params.id]);            
-            //orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
+           orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
             console.log('not ready for this function yet')	
            	res.redirect('/dash');
- 			//});
+ 			});
     });// end  app.post (update)
 		    		
 	
 	app.post('/create', function (req, res) {
 		   if (req.isAuthenticated()) {
-			console.log(req.body.descInput)
-			ormdb.insertOne(req.user.userId, req.body.nameInput, req.body.descInput, req.body.groupInput, req.body.wholeSaleInput,req.body.retailPriceInput, req.body.inStockInput, req.body.mRPInput, function(result){			    
-					res.redirect('/dash'); 
+			console.log(req.body.CustName)
+			ormdb.insertOne(req.user.userId, req.body.JobNumb, req.body.CustNumb, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
+					res.redirect('/dash.html'); 
 		    }); 
-		} else {
-			res.redirect('/verify')
-		}
-		   
-			
-
+		} 
+		 else {
+		 	res.redirect('/verify')
+		 }
+	
 	}); // end  app.post (create)
 
 

@@ -282,7 +282,7 @@ _:-ms-input-placeholder, :root .demo-graph {
 /* wide card*/
 
 .demo-card-wide.mdl-card {
-  width: 512px;
+  width: 60%px;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;
