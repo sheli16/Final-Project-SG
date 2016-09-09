@@ -37,7 +37,7 @@ passport.deserializeUser(function(user, done) {
 module.exports = function(app){
 
 	//GETs
-
+// --------------------------Authentication routes
 	app.get('/verify', function(req, res){
 		res.render('verify', {
 			welcomeText: "Sign In",
@@ -59,98 +59,7 @@ module.exports = function(app){
 		});
 	});
 
-
-	app.get('/', function(req, res){
-		res.render('index', {
-			
-		});
-	});
-
-	app.get('/index', function(req, res){
-		res.redirect('/');
-	});
-
-	app.get('/dash', function(req, res){
-		if (req.isAuthenticated()) {
-			
-			ormdb.selectAll(req.user.userId, function(result){
-		            res.render('dash.html', {
-		            	jobs1: result
-		            });
-			});
-			
-		}
-		else {
-			
-			res.redirect('/verify');
-		}
-	});
-// come back to this function sure how and why?---------------------------------------------------------------
-	app.post('/dash', function (req, res) {
-		   if (req.isAuthenticated()) {
-			console.log(req.body.descInput)
-			ormdb.insertOne(req.user.userId, req.body._______, req.body._________, req.body._________, req.body.wholeSaleInput,req.body.retailPriceInput, req.body.inStockInput, req.body.mRPInput, function(result){			    
-					res.redirect('/dash'); 
-		    }); 
-		} else {
-			res.redirect('/verify')
-		}
-		   
-			
-
-	}); // end  app.post (create)
-
-	app.get('/dash', function(req, res){
-		if (req.isAuthenticated()) {
-			console.log(req.user.userId);
-			res.render('dash', {
-				
-			});
-		}
-		else {
-			res.redirect('/verify');
-			
-		}
-	});
-
-	app.post('/update/:id', function (req, res) {
-		    //connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [true, req.params.id]);            
-           orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
-            console.log('not ready for this function yet')	
-           	res.redirect('/dash');
- 			});
-    });// end  app.post (update)
-		    		
-	
-	app.post('/create', function (req, res) {
-		   if (req.isAuthenticated()) {
-			console.log(req.body.CustName)
-			ormdb.insertOne(req.user.userId, req.body.JobNumb, req.body.CustNumb, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
-					res.redirect('/dash.html'); 
-		    }); 
-		} 
-		 else {
-		 	res.redirect('/verify')
-		 }
-	
-	}); // end  app.post (create)
-
-
-	app.post('/delete/:id', function (req, res) {
-			   if (req.isAuthenticated()) {
-				
-				ormdb.deleteOne(req.params.id, function(result){			    
-						res.redirect('/dash.html'); 
-			    }); 
-			} else {
-				res.redirect('/verify')
-			}
-			   	
-
-	}); 
-	
-
-	app.get('/authenticated', function(req,res){
+app.get('/authenticated', function(req,res){
 		if (req.isAuthenticated()) {
 			res.render('authenticated', {
 				username: req.user.username
@@ -182,4 +91,104 @@ module.exports = function(app){
 		});
 	});
 
+
+
+
+
+
+// ----------------------------basic routes
+	app.get('/', function(req, res){
+		res.render('index', {
+			
+		});
+	});
+
+	app.get('/index', function(req, res){
+		res.redirect('/');
+	});
+
+	app.get('/dash', function(req, res){
+		if (req.isAuthenticated()) {
+			console.log(req.user.userId);
+			res.render('dash', {
+				
+			});
+		}
+		else {
+			res.redirect('/verify');
+			}
+	});
+	
+	app.get('/templateDrawing', function(req, res){
+		if (req.isAuthenticated()) {
+			console.log(req.user.userId);
+		ormdb.insertTempJSON(req.user.userId, req.body.custTemp, function(result){			    
+
+			res.render('dash.html', {
+				
+			});
+		  });
+		}
+		else {
+			res.redirect('/verify');
+			}
+		
+	});
+// -----------------------------ORM MYsql Routes---------------------------
+	// app.get('/dash', function(req, res){
+	// 	if (req.isAuthenticated()) {
+			
+	// 		ormdb.selectAll(req.user.userId, function(result){
+	// 	            res.render('dash.html', {
+	// 	            	// jobs1: result
+	// 	            });
+	// 		});
+			
+	// 	}
+	// 	else {
+			
+	// 		res.redirect('/verify');
+	// 	}
+	// });
+
+	
+	app.post('/create', function (req, res) {
+		   if (req.isAuthenticated()) {
+			console.log(req.user.userId)
+
+			// console.log(req.body.CustName)
+			ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
+					res.redirect('/dash.html'); 
+		    }); 
+		} 
+		 else {
+		 	res.redirect('/verify')
+		 }
+	
+	}); // end  app.post (create)
+
+
+	// app.post('/delete/:id', function (req, res) {
+	// 		   if (req.isAuthenticated()) {
+				
+	// 			ormdb.deleteCust(req.params.id, function(result){			    
+	// 					res.redirect('/dash.html'); 
+	// 		    }); 
+	// 		} else {
+	// 			res.redirect('/verify')
+	// 		}
+			   	
+
+	// });
+
+	// app.post('/update/:id', function (req, res) {
+	// 	    //connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [true, req.params.id]);            
+ //           orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
+ //            console.log('not ready for this function yet')	
+ //           	res.redirect('/dash');
+ // 			});
+ //    });// end  app.post (update) 
+	
+
+	
 };

@@ -56,7 +56,7 @@
 <script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
 
   <!--Start literally Canvas -->
-    <link href="css/literallycanvas.css" rel="stylesheet">
+    <link href="/css/literallycanvas.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- End  -->
       <style>
@@ -286,8 +286,8 @@
         <span class='toolLabel'>Actions:</span>
         <a href="javascript:void(0);" class='tool' id="open-image">Open image</a>
 
+        <!-- <a href="javascript:void(0);" class='tool' id="save-image" action="/saveTemplate" method="post">Save image</a> -->
         <a href="javascript:void(0);" class='tool' id="save-image">Save image</a>
-        
         <a href="javascript:void(0);" class='tool' id="change-size">Change size</a>
         <a href="javascript:void(0);" class='tool' id="reset-size">Reset size</a>
         <a href="javascript:void(0);" class='tool' id="hide-lc">Teardown</a>
@@ -373,6 +373,21 @@
           // var drawing = document.getElementById('literally');
         var custTemp =JSON.stringify(lc.getSnapshot());
         console.log(custTemp)
+
+        // insertTempJSON: function(userId, jobImage) {
+        // console.log('userId: ' + userId);
+        // var queryString = 'INSERT INTO jobs(userId, jobImage) VALUES (?,?)';
+        
+        // console.log('query insert: '+ queryString);
+        // connection.query(queryString, [userId, jobImage], function(err, res) { 
+        //     //res.redirect('/verify');
+        //     // (res);
+        //      // cb(res);
+        //     return res;
+           
+
+        // });
+ 
         
         });
          
@@ -607,14 +622,14 @@
               <div class="mdl-card__supporting-text mdl-color-text--lime-50">
                 <h3>Add New Customer</h3>
                 
-                <!-- Simple Textfield -->
-<form action="/create" method="post" >
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="JobNumb">
-    <label class="mdl-textfield__label" for="sample1">Job Number</label>
-   </div>
+ <!-- New customer form Textfield -->
+    <form action="/create" method="post" >
   <div class="mdl-textfield mdl-js-textfield">
     <input class="mdl-textfield__input" type="text" id="CustNumb">
+    <label class="mdl-textfield__label" for="sample1">Customer Number</label>
+   </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="CustName">
     <label class="mdl-textfield__label" for="sample1">Customer Name</label>
     </div>
     <div class="mdl-textfield mdl-js-textfield">
@@ -733,6 +748,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNEmW7U-AfboFqYnWGp6PPoqtF-Wofiao&callback=initMap">
     </script>
+    <script src="myapp.js"></script>
 
   </body>
 </html>
