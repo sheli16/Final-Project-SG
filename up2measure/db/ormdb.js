@@ -28,7 +28,7 @@ var ormdb = {
     },
 
 // Insert New customer into database
-    insertCust: function(userId, jobNumb, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft) {
+    insertCust: function(userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT, callback) {
         console.log('userId: ' + userId);
         
         var queryString = 'INSERT INTO jobs(userId, jobNumb, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft) VALUES (?,?,?,?,?,?,?,?)';
@@ -43,7 +43,8 @@ var ormdb = {
             }
             
             console.log('response:', res)
-            callback(true, null)
+            callback(true,null)
+           // callback(res);
 
 
         });
@@ -93,3 +94,27 @@ var ormdb = {
 
 
 module.exports = ormdb;
+
+
+
+// connection examples
+
+// app.get('/', function(req, res) {
+//     connection.query('SELECT * FROM schools', function(err, result) {
+
+//       var html = '<h1> Magical Schools </h1>';
+
+//       html += '<ul>'
+
+//       // Use the data from the database to populate an HTML file
+//       for (var i = 0; i < result.length; i++) {
+//         html += '<li><p> ID: ' + result[i].id + '</p>';
+//         html += '<p>School: ' + result[i].name + ' </p></li>';
+//       };
+
+//       html += '</ul>'
+
+//       // Send the html to the browser
+//       res.send(html);
+//   });
+// });

@@ -5,6 +5,7 @@ var orm = require('../db/orm.js');
 var ormdb = require('../db/ormdb.js');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var bodyParser = require('body-parser');
 // ReactDOM.render(<App/>, ...); 
 
 //Setting the strategy for Passport
@@ -110,7 +111,7 @@ app.get('/authenticated', function(req,res){
 	app.get('/dash', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log(req.user.userId);
-			res.render('dash', {
+			res.render('dash.html', {
 				
 			});
 		}
@@ -135,31 +136,32 @@ app.get('/authenticated', function(req,res){
 		
 	});
 // -----------------------------ORM MYsql Routes---------------------------
-	// app.get('/dash', function(req, res){
-	// 	if (req.isAuthenticated()) {
+	app.get('/dash', function(req, res){
+		if (req.isAuthenticated()) {
 			
-	// 		ormdb.selectAll(req.user.userId, function(result){
-	// 	            res.render('dash.html', {
-	// 	            	// jobs1: result
-	// 	            });
-	// 		});
+			ormdb.selectAll(req.user.userId, function(result){
+		            res.render('dash.html', {
+		            	// jobs1: result
+		            });
+			});
 			
-	// 	}
-	// 	else {
+		}
+		else {
 			
-	// 		res.redirect('/verify');
-	// 	}
-	// });
+			res.redirect('/verify');
+		}
+	});
 
 	
 	app.post('/create', function (req, res) {
 		   if (req.isAuthenticated()) {
 			console.log(req.user.userId)
-
-			// console.log(req.body.CustName)
-			ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
-					res.redirect('/dash.html'); 
-		    }); 
+			console.log(req.body.CustName)
+		ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
+				
+		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
+		res.redirect('/dash.html'); 
+		     }); 
 		} 
 		 else {
 		 	res.redirect('/verify')
@@ -192,3 +194,13 @@ app.get('/authenticated', function(req,res){
 
 	
 };
+// // In your routeMap.js 
+// module.exports = [
+//     ['/', 'index#index'],
+//     ['login', 'auth#login', 'post'],
+//     ['items/comments/create', 'items/comments#create', 'auth#login', 'post'],
+//     ['admin/users/remove', 'admin/users#remove', 'auth#login', 'auth#isAdmin', 'post']
+// ];
+ 
+// // In your app.js 
+// expressPath(app, 'routeMap');

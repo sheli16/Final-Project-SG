@@ -1,0 +1,53 @@
+
+/* The following commands will run every time the app gets started.*/
+
+//Find all the pets ordering by the lowest price to the highest price
+//JUST FOR YOUR REFERENCE: selectAndOrder(whatToSelect, table, orderCol, orderBy)
+orm.selectAndOrder('animal_name', 'pets', 'price', 'DESC');
+//the above query does this:
+//SELECT * FROM pets ORDER BY price DESC;
+
+//Find a pet in the pets table by an animal_name of Rachel
+//JUST FOR YOUR REFERENCE: selectWhere(tableInput, colToSearch, valOfCol)
+orm.selectWhere('pets', 'animal_name', 'Rachel');
+//the above query does this:
+//SELECT * FROM pets WHERE animal_name = Rachel;
+
+//Find the buyer with the most pets
+//JUST FOR YOUR REFERENCE: findWhoHasMost(tableOneCol, tableTwoForeignKey, tableOne, tableTwo)
+orm.findWhoHasMost('buyer_name', 'buyer_id', 'buyers', 'pets');
+//the above query does this:
+/*
+SELECT buyer_name, COUNT(buyer_name) AS count
+FROM buyers
+LEFT JOIN pets ON pets.buyer_id = buyers.id
+GROUP BY buyer_name
+ORDER BY count desc
+LIMIT 1
+*/
+
+
+
+var orm = {
+    selectWhere: function(tableInput, colToSearch, valOfCol) {
+        var queryString = 'SELECT * FROM ' + tableInput + ' WHERE ' + colToSearch + ' = ?';
+        connection.query(queryString, [valOfCol], function(err, result) {
+            console.log(result);
+        });
+    },
+    selectAndOrder: function(whatToSelect, table, orderCol, orderBy) {
+        var queryString = 'SELECT ' + whatToSelect + ' FROM ' + table + ' ORDER BY '+ orderCol + ' ' + orderBy;
+        console.log(queryString)
+        connection.query(queryString, function(err, result) {
+            console.log(result);
+        });
+    },
+    findWhoHasMost: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
+        var queryString = 'SELECT ' + tableOneCol + ', COUNT(' + tableOneCol + ') AS count FROM ' + tableOne + ' LEFT JOIN ' + tableTwo + ' ON ' + tableTwo + '.' + tableTwoForeignKey + '= ' + tableOne + '.id GROUP BY ' + tableOneCol + ' ORDER BY count desc LIMIT 1';
+        connection.query(queryString, function(err, result) {
+            console.log(result);
+        });
+    }
+};
+
+module.exports = orm;

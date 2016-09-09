@@ -38,6 +38,20 @@ app.use(express.static('public'));
 //Routes-----------------------------------------------------------
 require('./routes/html-routes.js')(app);
 
+// // In your app.js 
+// var routes = [
+//     ['/public/index.html', 'index#index'],
+//     ['public/dash.html', '#dash', 'post'],
+//     ['public/dash.html', '#create', 'post'],
+    
+// ];
+// expressPath(app, routes);
+
+
+
+
+
+
 //-----------------------------------------------------------------
 orm.connectToDB();
 
