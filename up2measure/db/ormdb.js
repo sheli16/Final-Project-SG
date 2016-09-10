@@ -45,11 +45,38 @@ var ormdb = {
             console.log('response:', res)
             callback(true,null)
            // callback(res);
-
-
         });
     }
+// Insert New customer into database
+    // insertCustTemplate: function(userId, JobNumb, JobImage, callback) {
+    //     // localStorage.getItem('drawing');
+    //     console.log('userId: ' + userId);
+    //     var imageString = "slfjkslalslkkkkknnnnsjnfnjslnflsnfm,m,m,n,nmsfdf";
+    //     var queryString = 'INSERT INTO jobs(userId, JobNumb, jobImage) VALUES (?, 110, imageString)';
+        
+    //     console.log('query insert: '+ queryString);
+        
+
+    //     connection.query(queryString, [userId, 110, imagestring ], function(err, res) { 
+    //         if (err) {
+    //             console.log(err) 
+    //             return callback(false, err)
+    //         }
+            
+    //         console.log('response:', res)
+    //         callback(true,null)
+    //        // callback(res);
+
+
+    //     });
+    // }
+
+
+
+
+
 }
+
 
             //res.redirect('/verify');
             // (res);

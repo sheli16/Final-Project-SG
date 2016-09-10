@@ -14,15 +14,15 @@ CREATE TABLE IF NOT EXISTS tblUsers(
 
 CREATE TABLE jobs(
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    userId integer(10) NOT NULL,
+    userId integer(10) NOT NULL DEFAULT '{}',
     jobNumb integer(10) UNIQUE,
-    jobName varchar(25) NOT NULL,
-    jobAddress varchar(50) NOT NULL,
-    jobMaterial varchar(30) NOT NULL,
-    jobSink varchar(30) NOT NULL,
-    jobEdge varchar(30) NOT NULL,
-    jobSqft integer(10) NOT NULL,
-    jobImage varchar(2000) NOT NULL DEFAULT '{}'
+    jobName varchar(25) NOT NULL DEFAULT '{}',
+    jobAddress varchar(50) NOT NULL DEFAULT '{}',
+    jobMaterial varchar(30) NOT NULL DEFAULT '{}',
+    jobSink varchar(30) NOT NULL DEFAULT '{}',
+    jobEdge varchar(30) NOT NULL DEFAULT '{}',
+    jobSqft integer(10) NOT NULL DEFAULT '{}',
+    jobImage varchar(10000) NOT NULL DEFAULT '{}'
    
     -- PRIMARY KEY (id)
  
