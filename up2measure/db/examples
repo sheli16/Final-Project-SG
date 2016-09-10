@@ -51,3 +51,293 @@ var orm = {
 };
 
 module.exports = orm;
+
+
+
+
+
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git push heroku master
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git add -A
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git commit -m"heroku"
+[master 37a1b45] heroku
+ 2 files changed, 2 insertions(+)
+ create mode 100644 composer.json
+ create mode 100644 index.php
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ cd ..
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git remote -V
+error: unknown switch `V'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git add -A
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git commit -m"heroku"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git push
+Enter passphrase for key '/c/Users/sheli/.ssh/id_rsa':
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 480 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:sheli16/Final-Project-SG.git
+   325f9f8..37a1b45  master -> master
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git remote -V
+error: unknown switch `V'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git remote -v
+origin  git@github.com:sheli16/Final-Project-SG.git (fetch)
+origin  git@github.com:sheli16/Final-Project-SG.git (push)
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku create
+Creating app... done, tranquil-garden-54173
+https://tranquil-garden-54173.herokuapp.com/ | https://git.heroku.com/tranquil-garden-54173.git
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git remote -v
+heroku  https://git.heroku.com/tranquil-garden-54173.git (fetch)
+heroku  https://git.heroku.com/tranquil-garden-54173.git (push)
+origin  git@github.com:sheli16/Final-Project-SG.git (fetch)
+origin  git@github.com:sheli16/Final-Project-SG.git (push)
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git add -A
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git commit -m"heroku delpoy"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ gi push heroku master
+bash: gi: command not found
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ git push heroku master
+warning: unable to access 'up2measure/node_modules/express-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/node_modules/kind-of/.gitattributes': Filename too long
+warning: unable to access 'up2measure/node_modules/express-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/yargs/node_modules/cliui/node_modules/center-align/node_modules/align-text/node_modules/longest/.gitattributes': Filename too long
+warning: unable to access 'up2measure/node_modules/express-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/node_modules/kind-of/.gitattributes': Filename too long
+warning: unable to access 'up2measure/node_modules/express-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/yargs/node_modules/cliui/node_modules/right-align/node_modules/align-text/node_modules/longest/.gitattributes': Filename too long
+Counting objects: 8168, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7731/7731), done.
+Writing objects: 100% (8168/8168), 16.36 MiB | 1.29 MiB/s, done.
+Total 8168 (delta 1946), reused 8 (delta 1)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> PHP app detected
+remote: -----> Bootstrapping...
+remote: -----> Installing platform packages...
+remote:        NOTICE: No runtime required in composer.lock; using PHP ^5.5.17
+remote:        - apache (2.4.20)
+remote:        - nginx (1.8.1)
+remote:        - php (5.6.25)
+remote: -----> Installing dependencies...
+remote:        Composer version 1.2.0 2016-07-19 01:28:52
+remote: -----> Preparing runtime environment...
+remote:        NOTICE: No Procfile, using 'web: vendor/bin/heroku-php-apache2'.
+remote: -----> Checking for additional extensions to install...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 35.2M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://tranquil-garden-54173.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-garden-54173.git
+ * [new branch]      master -> master
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku open
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ cd uptomeasure
+bash: cd: uptomeasure: No such file or directory
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ cd up2measure
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku create
+Creating app... done, young-tor-63228
+https://young-tor-63228.herokuapp.com/ | https://git.heroku.com/young-tor-63228.git
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git remote -v
+heroku  https://git.heroku.com/tranquil-garden-54173.git (fetch)
+heroku  https://git.heroku.com/tranquil-garden-54173.git (push)
+origin  git@github.com:sheli16/Final-Project-SG.git (fetch)
+origin  git@github.com:sheli16/Final-Project-SG.git (push)
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git add -A
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git commit -m"heroku"
+[master 07f457e] heroku
+ 3 files changed, 2 insertions(+)
+ create mode 100644 up2measure/Projectproposal.pdf
+ create mode 100644 up2measure/composer.json
+ create mode 100644 up2measure/index.php
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ git push heroku master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 462 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> PHP app detected
+remote: -----> Bootstrapping...
+remote: -----> Installing platform packages...
+remote:        NOTICE: No runtime required in composer.lock; using PHP ^5.5.17
+remote:        - apache (2.4.20)
+remote:        - nginx (1.8.1)
+remote:        - php (5.6.25)
+remote: -----> Installing dependencies...
+remote:        Composer version 1.2.0 2016-07-19 01:28:52
+remote: -----> Preparing runtime environment...
+remote:        NOTICE: No Procfile, using 'web: vendor/bin/heroku-php-apache2'.
+remote: -----> Checking for additional extensions to install...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 35.5M
+remote: -----> Launching...
+remote:        Released v4
+remote:        https://tranquil-garden-54173.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-garden-54173.git
+   37a1b45..07f457e  master -> master
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku open
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku addons:create jawsdb
+ !    No app specified.
+ !    Run this command from an app folder or specify which app to use with --app APP.
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku addons:create jawsdb https://tranquil-garden-54173.herokuapp.com/
+ !    Unexpected arguments: https://tranquil-garden-54173.herokuapp.com/
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku addons:create jawsdb --app https://tranquil-garden-54173.herokuapp.com/
+ !    The requested API endpoint was not found. Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify your intended version with the `Accept` header?
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku addons:create jawsdb --app tranquil-garden-54173.herokuapp.com/
+ !    The requested API endpoint was not found. Are you using the right HTTP verb (i.e. `GET` vs. `POST`), and did you specify your intended version with the `Accept` header?
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ heroku addons:create jawsdb
+ !    No app specified.
+ !    Run this command from an app folder or specify which app to use with --app APP.
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ cd..
+bash: cd..: command not found
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg/up2measure (master)
+$ cd ..
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku addons:create jawsdb
+ !    Please verify your account to install this add-on plan (please enter a credit card) For more information, see https://devcenter.heroku.com/categories/billing Verify now at https://heroku.com/verify
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku addons:create jawsdb
+ !    Please verify your account to install this add-on plan (please enter a credit card) For more information, see https://devcenter.heroku.com/categories/billing Verify now at https://heroku.com/verify
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku addons:create jawsdb
+Creating jawsdb-curved-91477... done, (free)
+Adding jawsdb-curved-91477 to tranquil-garden-54173... done
+Setting JAWSDB_URL and restarting tranquil-garden-54173... done, v5
+Your database has been provisioned and is ready for use.
+Use `heroku addons:docs jawsdb` to view documentation.
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$ heroku config:get JAWSDB_URL
+mysql://qu3v8r9703elkymr:xf8bjnkglfth8its@uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rjxt8759s56kuh0l
+
+sheli@Shel MINGW64 ~/desktop/bootcamp/final-project-sg (master)
+$
