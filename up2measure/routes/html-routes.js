@@ -6,6 +6,11 @@ var ormdb = require('../db/ormdb.js');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var bodyParser = require('body-parser');
+var localStorage = require('json-localstorage');
+
+// var LiterCanvas = require('../public/literallycanvas.js');
+// var LC = require('literallycanvas');
+// var LiterallyCanCore = require('../js/literallycanvas-core.js');
 // ReactDOM.render(<App/>, ...); 
 
 //Setting the strategy for Passport
@@ -160,26 +165,31 @@ app.get('/authenticated', function(req,res){
 		ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
 				
 		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
-		res.redirect('/dash.html');
-		alert("You have input your customer" + req.body.CustName) 
+		res.redirect('/dash.html')
+		// alert("You have input your customer" + req.body.CustName); 
 		     }); 
 		} 
 		 else {
-		 	alert("Oh no, There has been an error!")
+		 	// alert("Oh no, There has been an error!");
 		 	res.redirect('/verify')
 
 		 }
 	
 	}); // end  app.post (create)
 
-	app.post('/save_customer_image', function (req, res) {
+	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
+		   
+		var localStorageKey = 'drawing'
+		
+   		localStorage.getItem(localStorageKey) 
+   	      	JSON.parse(localStorage.getItem(localStorageKey));
 			console.log(req.user.userId)
-			console.log(req.body.CustName)
+			console.log(localstorageKey)
 		ormdb.insertCustTemplate(req.user.userId, 110, "fffffhhgfttyhhhjjmnjjk", function(result){			    
 				
 		//ormdb.insertCust(req.user.userId, , function(result){	
-		res.redirect('/dash.html'); 
+		res.send(""); 
 		     }); 
 		} 
 		 else {
