@@ -7,8 +7,10 @@ var firebase = require("firebase");
 var passport = require('passport');
 var session = require('express-session');
 var localStorage = require('json-localstorage');
+var ls = require('local-storage');
 // var session = require('path');
 var orm = require('./db/orm.js');
+var ormdb = require('./db/ormdb.js');
 var PORT = 8080;
 
 //Handlebars-------------------------------------------------------
@@ -38,7 +40,7 @@ app.use(express.static('public'));
 
 //Routes-----------------------------------------------------------
 require('./routes/html-routes.js')(app);
-require('./routes/html-routes.js')(app);
+
 
 // // In your app.js 
 // var routes = [

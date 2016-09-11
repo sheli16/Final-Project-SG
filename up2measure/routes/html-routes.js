@@ -7,6 +7,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var bodyParser = require('body-parser');
 var localStorage = require('json-localstorage');
+var ls = require('local-storage');
 
 // var LiterCanvas = require('../public/literallycanvas.js');
 // var LC = require('literallycanvas');
@@ -179,9 +180,13 @@ app.get('/authenticated', function(req,res){
 
 	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
+		   	console.log(req.body)
+
+	var templateIMG = localStorage.drawing
+		console.log(templateIMG)
+		   	res.send('post works')
 		   
-		   console.log(JSON.parse(templateIMG))
-		 // var localStorageKey = 'drawing'
+		   // var localStorageKey = 'drawing'
 		 // var saveIMG = function(){
 		 // var getStorage = localStorage.getItem(localStorageKey)
 			// console.log(req.user.userId)

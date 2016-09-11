@@ -2,7 +2,8 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'install',
-1 verbose cli   'json-localstorage' ]
+1 verbose cli   'local-storage',
+1 verbose cli   '--save' ]
 2 info using npm@2.15.5
 3 info using node@v4.4.5
 4 verbose install initial load of C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\package.json
@@ -15,212 +16,230 @@
 11 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\express-handlebars\package.json
 12 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\express-session\package.json
 13 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\firebase\package.json
-14 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\literallycanvas\package.json
-15 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\material-design-lite\package.json
-16 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mongodb\package.json
-17 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mongojs\package.json
-18 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mysql\package.json
-19 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\package\package.json
-20 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\parser\package.json
-21 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport\package.json
-22 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport-auth0\package.json
-23 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport-local\package.json
-24 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\path\package.json
-25 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react\package.json
-26 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react-dom\package.json
-27 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react-router\package.json
-28 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\request\package.json
-29 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\webpack\package.json
-30 info package.json connect-flash@0.1.1 No license field.
-31 info package.json parser@0.1.4 No license field.
+14 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage\package.json
+15 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\literallycanvas\package.json
+16 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\material-design-lite\package.json
+17 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mongodb\package.json
+18 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mongojs\package.json
+19 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\mysql\package.json
+20 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\package\package.json
+21 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\parser\package.json
+22 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport\package.json
+23 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport-auth0\package.json
+24 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\passport-local\package.json
+25 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\path\package.json
+26 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react\package.json
+27 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react-dom\package.json
+28 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\react-router\package.json
+29 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\request\package.json
+30 verbose installManyTop reading scoped package data from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\webpack\package.json
+31 info package.json connect-flash@0.1.1 No license field.
 32 info package.json package@1.0.1 No license field.
-33 info package.json path@0.12.7 path is also the name of a node core module.
-34 info package.json passport-local@1.0.0 No license field.
-35 info package.json body@5.1.0 No license field.
-36 info package.json firebase@3.3.0 No license field.
-37 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\package.json
-38 silly cache add args [ 'json-localstorage', null ]
-39 verbose cache add spec json-localstorage
-40 silly cache add parsed spec Result {
-40 silly cache add   raw: 'json-localstorage',
-40 silly cache add   scope: null,
-40 silly cache add   name: 'json-localstorage',
-40 silly cache add   rawSpec: '',
-40 silly cache add   spec: 'latest',
-40 silly cache add   type: 'tag' }
-41 silly addNamed json-localstorage@latest
-42 verbose addNamed "latest" is being treated as a dist-tag for json-localstorage
-43 info addNameTag [ 'json-localstorage', 'latest' ]
-44 silly mapToRegistry name json-localstorage
-45 silly mapToRegistry using default registry
-46 silly mapToRegistry registry https://registry.npmjs.org/
-47 silly mapToRegistry data Result {
-47 silly mapToRegistry   raw: 'json-localstorage',
-47 silly mapToRegistry   scope: null,
-47 silly mapToRegistry   name: 'json-localstorage',
-47 silly mapToRegistry   rawSpec: '',
-47 silly mapToRegistry   spec: 'latest',
-47 silly mapToRegistry   type: 'tag' }
-48 silly mapToRegistry uri https://registry.npmjs.org/json-localstorage
-49 verbose addNameTag registry:https://registry.npmjs.org/json-localstorage not in flight; fetching
-50 verbose request uri https://registry.npmjs.org/json-localstorage
-51 verbose request no auth needed
-52 info attempt registry request try #1 at 2:43:08 PM
-53 verbose request id c6ff35e2c571f03c
-54 http request GET https://registry.npmjs.org/json-localstorage
-55 http 200 https://registry.npmjs.org/json-localstorage
-56 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
-56 verbose headers   etag: '"74SHCLLNKULGD6BF6HW7G2FB3"',
-56 verbose headers   'content-type': 'application/json',
-56 verbose headers   'content-encoding': 'gzip',
-56 verbose headers   'cache-control': 'max-age=300',
-56 verbose headers   'content-length': '2572',
-56 verbose headers   'accept-ranges': 'bytes',
-56 verbose headers   date: 'Sat, 10 Sep 2016 18:43:06 GMT',
-56 verbose headers   via: '1.1 varnish',
-56 verbose headers   age: '0',
-56 verbose headers   connection: 'keep-alive',
-56 verbose headers   'x-served-by': 'cache-dfw1822-DFW',
-56 verbose headers   'x-cache': 'MISS',
-56 verbose headers   'x-cache-hits': '0',
-56 verbose headers   'x-timer': 'S1473532986.462925,VS0,VE255',
-56 verbose headers   vary: 'Accept-Encoding' }
-57 silly get cb [ 200,
-57 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
-57 silly get     etag: '"74SHCLLNKULGD6BF6HW7G2FB3"',
-57 silly get     'content-type': 'application/json',
-57 silly get     'content-encoding': 'gzip',
-57 silly get     'cache-control': 'max-age=300',
-57 silly get     'content-length': '2572',
-57 silly get     'accept-ranges': 'bytes',
-57 silly get     date: 'Sat, 10 Sep 2016 18:43:06 GMT',
-57 silly get     via: '1.1 varnish',
-57 silly get     age: '0',
-57 silly get     connection: 'keep-alive',
-57 silly get     'x-served-by': 'cache-dfw1822-DFW',
-57 silly get     'x-cache': 'MISS',
-57 silly get     'x-cache-hits': '0',
-57 silly get     'x-timer': 'S1473532986.462925,VS0,VE255',
-57 silly get     vary: 'Accept-Encoding' } ]
-58 verbose get saving json-localstorage to C:\Users\sheli\AppData\Roaming\npm-cache\registry.npmjs.org\json-localstorage\.cache.json
-59 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
-60 silly addNameTag next cb for json-localstorage with tag latest
-61 silly addNamed json-localstorage@1.3.0
-62 verbose addNamed "1.3.0" is a plain semver version for json-localstorage
-63 silly mapToRegistry name json-localstorage
-64 silly mapToRegistry using default registry
-65 silly mapToRegistry registry https://registry.npmjs.org/
-66 silly mapToRegistry data Result {
-66 silly mapToRegistry   raw: 'json-localstorage',
-66 silly mapToRegistry   scope: null,
-66 silly mapToRegistry   name: 'json-localstorage',
-66 silly mapToRegistry   rawSpec: '',
-66 silly mapToRegistry   spec: 'latest',
-66 silly mapToRegistry   type: 'tag' }
-67 silly mapToRegistry uri https://registry.npmjs.org/json-localstorage
-68 verbose addRemoteTarball https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz not in flight; adding
-69 verbose addRemoteTarball [ 'https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz',
-69 verbose addRemoteTarball   '51170c5c51e2ab660c08ad0c2f988b2712aa166b' ]
-70 info retry fetch attempt 1 at 2:43:10 PM
-71 info attempt registry request try #1 at 2:43:10 PM
-72 http fetch GET https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz
-73 http fetch 200 https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz
-74 silly fetchAndShaCheck shasum 51170c5c51e2ab660c08ad0c2f988b2712aa166b
-75 verbose addTmpTarball C:\Users\sheli\AppData\Local\Temp\npm-11488-ae2be221\registry.npmjs.org\json-localstorage\-\json-localstorage-1.3.0.tgz not in flight; adding
-76 verbose addTmpTarball already have metadata; skipping unpack for json-localstorage@1.3.0
-77 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
-78 silly cache afterAdd json-localstorage@1.3.0
-79 verbose afterAdd C:\Users\sheli\AppData\Roaming\npm-cache\json-localstorage\1.3.0\package\package.json not in flight; writing
-80 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
-81 verbose afterAdd C:\Users\sheli\AppData\Roaming\npm-cache\json-localstorage\1.3.0\package\package.json written
-82 silly install resolved [ { name: 'json-localstorage',
-82 silly install resolved     version: '1.3.0',
-82 silly install resolved     description: 'A clone of the Web Storage API for node using a JSON file for data',
-82 silly install resolved     main: 'json-localstorage.js',
-82 silly install resolved     config: { filepath: '.storage.json' },
-82 silly install resolved     repository:
-82 silly install resolved      { type: 'git',
-82 silly install resolved        url: 'https://github.com/Subterrane/json-localstorage' },
-82 silly install resolved     scripts: { test: 'node test.js' },
-82 silly install resolved     keywords: [ 'localStorage' ],
-82 silly install resolved     author: { name: 'Will Munslow' },
-82 silly install resolved     license: 'MIT',
-82 silly install resolved     gitHead: '947ac2b97ed7ce66e7ea868ea2c4c68e3c8e7b01',
-82 silly install resolved     bugs: { url: 'https://github.com/Subterrane/json-localstorage/issues' },
-82 silly install resolved     homepage: 'https://github.com/Subterrane/json-localstorage',
-82 silly install resolved     _id: 'json-localstorage@1.3.0',
-82 silly install resolved     _shasum: '51170c5c51e2ab660c08ad0c2f988b2712aa166b',
-82 silly install resolved     _from: 'json-localstorage@latest',
-82 silly install resolved     _npmVersion: '2.7.0',
-82 silly install resolved     _nodeVersion: '1.5.1',
-82 silly install resolved     _npmUser: { name: 'subterrane', email: 'will@subterrane.com' },
-82 silly install resolved     maintainers: [ [Object] ],
-82 silly install resolved     dist:
-82 silly install resolved      { shasum: '51170c5c51e2ab660c08ad0c2f988b2712aa166b',
-82 silly install resolved        tarball: 'https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz' },
-82 silly install resolved     directories: {},
-82 silly install resolved     _resolved: 'https://registry.npmjs.org/json-localstorage/-/json-localstorage-1.3.0.tgz' } ]
-83 info install json-localstorage@1.3.0 into C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
-84 info installOne json-localstorage@1.3.0
-85 verbose installOne of json-localstorage to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure not in flight; installing
-86 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
-87 verbose lock using C:\Users\sheli\AppData\Roaming\npm-cache\_locks\json-localstorage-fedbbf03fc42e1ea.lock for C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-88 silly install write writing json-localstorage 1.3.0 to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-89 verbose unbuild node_modules\json-localstorage
-90 silly gentlyRm C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage is being purged from base C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
-91 verbose gentlyRm don't care about contents; nuking C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-92 verbose tar unpack C:\Users\sheli\AppData\Roaming\npm-cache\json-localstorage\1.3.0\package.tgz
-93 verbose tar unpacking to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-94 silly gentlyRm C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage is being purged
-95 verbose gentlyRm don't care about contents; nuking C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-96 silly gunzTarPerm modes [ '777', '666' ]
-97 silly gunzTarPerm extractEntry package.json
-98 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
-99 silly gunzTarPerm extractEntry .npmignore
-100 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
-101 silly gunzTarPerm extractEntry README.md
-102 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
-103 silly gunzTarPerm extractEntry LICENSE
-104 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
-105 silly gunzTarPerm extractEntry json-localstorage.js
-106 silly gunzTarPerm modified mode [ 'json-localstorage.js', 420, 438 ]
-107 silly gunzTarPerm extractEntry test.js
-108 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
-109 verbose write writing to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage\package.json
-110 info preinstall json-localstorage@1.3.0
-111 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage\package.json
-112 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage\package.json
-113 silly install resolved []
-114 verbose about to build C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-115 info build C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-116 info linkStuff json-localstorage@1.3.0
-117 silly linkStuff json-localstorage@1.3.0 has C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules as its parent node_modules
-118 verbose linkBins json-localstorage@1.3.0
-119 verbose linkMans json-localstorage@1.3.0
-120 verbose rebuildBundles json-localstorage@1.3.0
-121 info install json-localstorage@1.3.0
-122 info postinstall json-localstorage@1.3.0
-123 verbose unlock done using C:\Users\sheli\AppData\Roaming\npm-cache\_locks\json-localstorage-fedbbf03fc42e1ea.lock for C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\json-localstorage
-124 verbose validateInstall loading C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\package.json for validation
-125 verbose stack Error: The package react@15.3.1 does not satisfy its siblings' peerDependencies requirements!
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:125:32
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:268:7
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:142:5
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
-125 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
-125 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
-125 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
-125 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
-126 verbose cwd C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
-127 error Windows_NT 10.0.10586
-128 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "json-localstorage"
-129 error node v4.4.5
-130 error npm  v2.15.5
-131 error code EPEERINVALID
-132 error peerinvalid The package react@15.3.1 does not satisfy its siblings' peerDependencies requirements!
-132 error peerinvalid Peer react-dom@0.14.8 wants react@^0.14.8
-132 error peerinvalid Peer react-router@2.6.1 wants react@^0.14.0 || ^15.0.0
-132 error peerinvalid Peer literallycanvas@0.4.13 wants react@^0.14.6
-133 verbose exit [ 1, true ]
+33 info package.json passport-local@1.0.0 No license field.
+34 info package.json parser@0.1.4 No license field.
+35 info package.json path@0.12.7 path is also the name of a node core module.
+36 info package.json body@5.1.0 No license field.
+37 info package.json firebase@3.3.0 No license field.
+38 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\package.json
+39 silly cache add args [ 'local-storage', null ]
+40 verbose cache add spec local-storage
+41 silly cache add parsed spec Result {
+41 silly cache add   raw: 'local-storage',
+41 silly cache add   scope: null,
+41 silly cache add   name: 'local-storage',
+41 silly cache add   rawSpec: '',
+41 silly cache add   spec: 'latest',
+41 silly cache add   type: 'tag' }
+42 silly addNamed local-storage@latest
+43 verbose addNamed "latest" is being treated as a dist-tag for local-storage
+44 info addNameTag [ 'local-storage', 'latest' ]
+45 silly mapToRegistry name local-storage
+46 silly mapToRegistry using default registry
+47 silly mapToRegistry registry https://registry.npmjs.org/
+48 silly mapToRegistry data Result {
+48 silly mapToRegistry   raw: 'local-storage',
+48 silly mapToRegistry   scope: null,
+48 silly mapToRegistry   name: 'local-storage',
+48 silly mapToRegistry   rawSpec: '',
+48 silly mapToRegistry   spec: 'latest',
+48 silly mapToRegistry   type: 'tag' }
+49 silly mapToRegistry uri https://registry.npmjs.org/local-storage
+50 verbose addNameTag registry:https://registry.npmjs.org/local-storage not in flight; fetching
+51 verbose request uri https://registry.npmjs.org/local-storage
+52 verbose request no auth needed
+53 info attempt registry request try #1 at 11:04:34 AM
+54 verbose request id 045a50116f3fb0bd
+55 http request GET https://registry.npmjs.org/local-storage
+56 http 200 https://registry.npmjs.org/local-storage
+57 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+57 verbose headers   etag: '"AYARHORAW9GN70IEDH301HQ3X"',
+57 verbose headers   'content-type': 'application/json',
+57 verbose headers   'content-encoding': 'gzip',
+57 verbose headers   'cache-control': 'max-age=300',
+57 verbose headers   'content-length': '3218',
+57 verbose headers   'accept-ranges': 'bytes',
+57 verbose headers   date: 'Sun, 11 Sep 2016 15:04:31 GMT',
+57 verbose headers   via: '1.1 varnish',
+57 verbose headers   age: '0',
+57 verbose headers   connection: 'keep-alive',
+57 verbose headers   'x-served-by': 'cache-atl6220-ATL',
+57 verbose headers   'x-cache': 'MISS',
+57 verbose headers   'x-cache-hits': '0',
+57 verbose headers   'x-timer': 'S1473606270.871613,VS0,VE342',
+57 verbose headers   vary: 'Accept-Encoding' }
+58 silly get cb [ 200,
+58 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+58 silly get     etag: '"AYARHORAW9GN70IEDH301HQ3X"',
+58 silly get     'content-type': 'application/json',
+58 silly get     'content-encoding': 'gzip',
+58 silly get     'cache-control': 'max-age=300',
+58 silly get     'content-length': '3218',
+58 silly get     'accept-ranges': 'bytes',
+58 silly get     date: 'Sun, 11 Sep 2016 15:04:31 GMT',
+58 silly get     via: '1.1 varnish',
+58 silly get     age: '0',
+58 silly get     connection: 'keep-alive',
+58 silly get     'x-served-by': 'cache-atl6220-ATL',
+58 silly get     'x-cache': 'MISS',
+58 silly get     'x-cache-hits': '0',
+58 silly get     'x-timer': 'S1473606270.871613,VS0,VE342',
+58 silly get     vary: 'Accept-Encoding' } ]
+59 verbose get saving local-storage to C:\Users\sheli\AppData\Roaming\npm-cache\registry.npmjs.org\local-storage\.cache.json
+60 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+61 silly addNameTag next cb for local-storage with tag latest
+62 silly addNamed local-storage@1.4.2
+63 verbose addNamed "1.4.2" is a plain semver version for local-storage
+64 silly mapToRegistry name local-storage
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry data Result {
+67 silly mapToRegistry   raw: 'local-storage',
+67 silly mapToRegistry   scope: null,
+67 silly mapToRegistry   name: 'local-storage',
+67 silly mapToRegistry   rawSpec: '',
+67 silly mapToRegistry   spec: 'latest',
+67 silly mapToRegistry   type: 'tag' }
+68 silly mapToRegistry uri https://registry.npmjs.org/local-storage
+69 verbose addRemoteTarball https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz not in flight; adding
+70 verbose addRemoteTarball [ 'https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz',
+70 verbose addRemoteTarball   '7ec2d3fb7f1ea91a85b160d3a785058f87bfbfa5' ]
+71 info retry fetch attempt 1 at 11:04:35 AM
+72 info attempt registry request try #1 at 11:04:35 AM
+73 http fetch GET https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz
+74 http fetch 200 https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz
+75 silly fetchAndShaCheck shasum 7ec2d3fb7f1ea91a85b160d3a785058f87bfbfa5
+76 verbose addTmpTarball C:\Users\sheli\AppData\Local\Temp\npm-6424-75e5780b\registry.npmjs.org\local-storage\-\local-storage-1.4.2.tgz not in flight; adding
+77 verbose addTmpTarball already have metadata; skipping unpack for local-storage@1.4.2
+78 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+79 silly cache afterAdd local-storage@1.4.2
+80 verbose afterAdd C:\Users\sheli\AppData\Roaming\npm-cache\local-storage\1.4.2\package\package.json not in flight; writing
+81 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+82 verbose afterAdd C:\Users\sheli\AppData\Roaming\npm-cache\local-storage\1.4.2\package\package.json written
+83 silly install resolved [ { name: 'local-storage',
+83 silly install resolved     version: '1.4.2',
+83 silly install resolved     description: 'A simplified localStorage API that just works',
+83 silly install resolved     main: 'local-storage.js',
+83 silly install resolved     repository:
+83 silly install resolved      { type: 'git',
+83 silly install resolved        url: 'https://github.com/bevacqua/local-storage.git' },
+83 silly install resolved     keywords: [ 'localstorage', 'local-storage', 'persistance' ],
+83 silly install resolved     author:
+83 silly install resolved      { name: 'Nicolas Bevacqua',
+83 silly install resolved        email: 'nicolasbevacqua@gmail.com',
+83 silly install resolved        url: 'http://bevacqua.io/' },
+83 silly install resolved     license: 'MIT',
+83 silly install resolved     bugs: { url: 'https://github.com/bevacqua/local-storage/issues' },
+83 silly install resolved     homepage: 'https://github.com/bevacqua/local-storage',
+83 silly install resolved     scripts: { deploy: 'browserify local-storage.js -o dist/local-storage.js && git add . && git commit -am "Autogenerated pre-deployment commit" ; npm version ${BUMP:-"patch"} --no-git-tag-version && git add package.json && git commit -m "Autogenerated pre-deployment commit" && bower version ${BUMP:-"patch"} && git push --tags && npm publish' },
+83 silly install resolved     devDependencies: { browserify: '^8.0.3' },
+83 silly install resolved     gitHead: '97d2475ffb863c0848fb56949c8ed031a61db477',
+83 silly install resolved     _id: 'local-storage@1.4.2',
+83 silly install resolved     _shasum: '7ec2d3fb7f1ea91a85b160d3a785058f87bfbfa5',
+83 silly install resolved     _from: 'local-storage@latest',
+83 silly install resolved     _npmVersion: '2.6.0',
+83 silly install resolved     _nodeVersion: '0.10.26',
+83 silly install resolved     _npmUser: { name: 'bevacqua', email: 'nicolasbevacqua@gmail.com' },
+83 silly install resolved     maintainers: [ [Object] ],
+83 silly install resolved     dist:
+83 silly install resolved      { shasum: '7ec2d3fb7f1ea91a85b160d3a785058f87bfbfa5',
+83 silly install resolved        tarball: 'https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz' },
+83 silly install resolved     directories: {},
+83 silly install resolved     _resolved: 'https://registry.npmjs.org/local-storage/-/local-storage-1.4.2.tgz' } ]
+84 info install local-storage@1.4.2 into C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
+85 info installOne local-storage@1.4.2
+86 verbose installOne of local-storage to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure not in flight; installing
+87 verbose correctMkdir C:\Users\sheli\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+88 verbose lock using C:\Users\sheli\AppData\Roaming\npm-cache\_locks\local-storage-34bc3d0004eb6672.lock for C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+89 silly install write writing local-storage 1.4.2 to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+90 verbose unbuild node_modules\local-storage
+91 silly gentlyRm C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage is being purged from base C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
+92 verbose gentlyRm don't care about contents; nuking C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+93 verbose tar unpack C:\Users\sheli\AppData\Roaming\npm-cache\local-storage\1.4.2\package.tgz
+94 verbose tar unpacking to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+95 silly gentlyRm C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage is being purged
+96 verbose gentlyRm don't care about contents; nuking C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+97 silly gunzTarPerm modes [ '777', '666' ]
+98 silly gunzTarPerm extractEntry package.json
+99 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+100 silly gunzTarPerm extractEntry .npmignore
+101 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+102 silly gunzTarPerm extractEntry tracking.js
+103 silly gunzTarPerm modified mode [ 'tracking.js', 420, 438 ]
+104 silly gunzTarPerm extractEntry local-storage.js
+105 silly gunzTarPerm modified mode [ 'local-storage.js', 420, 438 ]
+106 silly gunzTarPerm extractEntry stub.js
+107 silly gunzTarPerm modified mode [ 'stub.js', 420, 438 ]
+108 silly gunzTarPerm extractEntry bower.json
+109 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+110 silly gunzTarPerm extractEntry changelog.markdown
+111 silly gunzTarPerm modified mode [ 'changelog.markdown', 420, 438 ]
+112 silly gunzTarPerm extractEntry license
+113 silly gunzTarPerm modified mode [ 'license', 420, 438 ]
+114 silly gunzTarPerm extractEntry .editorconfig
+115 silly gunzTarPerm modified mode [ '.editorconfig', 420, 438 ]
+116 silly gunzTarPerm extractEntry .jshintignore
+117 silly gunzTarPerm modified mode [ '.jshintignore', 420, 438 ]
+118 silly gunzTarPerm extractEntry .jshintrc
+119 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+120 silly gunzTarPerm extractEntry readme.markdown
+121 silly gunzTarPerm modified mode [ 'readme.markdown', 420, 438 ]
+122 silly gunzTarPerm extractEntry dist/local-storage.js
+123 silly gunzTarPerm modified mode [ 'dist/local-storage.js', 420, 438 ]
+124 verbose write writing to C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage\package.json
+125 info preinstall local-storage@1.4.2
+126 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage\package.json
+127 verbose readDependencies loading dependencies from C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage\package.json
+128 silly install resolved []
+129 verbose about to build C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+130 info build C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+131 info linkStuff local-storage@1.4.2
+132 silly linkStuff local-storage@1.4.2 has C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules as its parent node_modules
+133 verbose linkBins local-storage@1.4.2
+134 verbose linkMans local-storage@1.4.2
+135 verbose rebuildBundles local-storage@1.4.2
+136 info install local-storage@1.4.2
+137 info postinstall local-storage@1.4.2
+138 verbose unlock done using C:\Users\sheli\AppData\Roaming\npm-cache\_locks\local-storage-34bc3d0004eb6672.lock for C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\node_modules\local-storage
+139 verbose validateInstall loading C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure\package.json for validation
+140 verbose stack Error: The package react@15.3.1 does not satisfy its siblings' peerDependencies requirements!
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:125:32
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:268:7
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:142:5
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+140 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+140 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+140 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+140 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+141 verbose cwd C:\Users\sheli\desktop\bootcamp\final-project-sg\up2measure
+142 error Windows_NT 10.0.10586
+143 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "local-storage" "--save"
+144 error node v4.4.5
+145 error npm  v2.15.5
+146 error code EPEERINVALID
+147 error peerinvalid The package react@15.3.1 does not satisfy its siblings' peerDependencies requirements!
+147 error peerinvalid Peer react-dom@0.14.8 wants react@^0.14.8
+147 error peerinvalid Peer react-router@2.6.1 wants react@^0.14.0 || ^15.0.0
+147 error peerinvalid Peer literallycanvas@0.4.13 wants react@^0.14.6
+148 verbose exit [ 1, true ]

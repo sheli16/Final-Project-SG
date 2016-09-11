@@ -225,7 +225,7 @@
       
       555-444-5555<br>
       555-555-5555<br>
-
+ 
     </h3>
   </div>
   <div class="mdl-card__actions mdl-card--border">
@@ -601,32 +601,38 @@
 //    }
 //  });
 // var custTemp =JSON.stringify(lc.getSnapshot());
- $("#saveTempMSQL").click(function() {
-   // $('#saveTempMSQL').on('click', function(){ 
+ // $("#saveTempMSQL").click(function() {
+ //   // $('#saveTempMSQL').on('click', function(){ 
           
-       var templateIMG = localStorage.getItem('drawing')
-        console.log(templateIMG)
-        var msg = "It was sent to route"
-        $.ajax({
-                method: "POST",
-                url: "/saveimage",
-                data: {templateIMG}
-          })
-            .done(function( msg ) {
-            alert( "Data Sent: " + msg );
-           });
+ //       var templateIMG = localStorage.getItem('drawing')
+ //        console.log(templateIMG)
+ //        var msg = "It was sent to route"
+ //        $.post("/saveimage",templateIMG)
 
-        })
+ //        $.ajax({
+ //                method: "POST",
+ //                url: "/saveimage",
+ //                data: {templateIMG}
+ //          })
+ //            .done(function( msg ) {
+ //            alert( "Data Sent: " + msg );
+ //           });
 
-
+ //        })
 </script>
 
 
 <!--End litterally Canvas  -->
           </div>
+
+
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
 
-          
+          <form ><button type="submit" id="saveTempMSQL">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB" >
+      Save Template Drawing
+    </a></button>
+    </form>
             
 <!-- Map -->
             
