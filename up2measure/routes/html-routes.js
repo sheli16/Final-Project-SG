@@ -180,23 +180,43 @@ app.get('/authenticated', function(req,res){
 	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
 		   
-		var localStorageKey = 'drawing'
-		
-   		localStorage.getItem(localStorageKey) 
-   	      	JSON.parse(localStorage.getItem(localStorageKey));
-			console.log(req.user.userId)
-			console.log(localstorageKey)
-		ormdb.insertCustTemplate(req.user.userId, 110, "fffffhhgfttyhhhjjmnjjk", function(result){			    
+		   console.log(JSON.parse(templateIMG))
+		 // var localStorageKey = 'drawing'
+		 // var saveIMG = function(){
+		 // var getStorage = localStorage.getItem(localStorageKey)
+			// console.log(req.user.userId)
+			// console.log(localStorageKey)
+			// console.log(getStorage)
+			
+		// 	function getTempStorage(){
+  //  		if (getStorage = localStorageKey)
+ 	// 	JSON.parse(getStorage);
+		// console.log(getStorage);
+		//  }
+		 // }
+	}
+});
+// }
+
+
+  //  		function() = localStorage.getItem(localStorageKey) 
+  //  	     JSON.parse(localStorage.getItem(localStorageKey));
+		// 	console.log(req.user.userId)
+		// 	console.log(localStorageKey)
+		// 	}
+		// });
+		// ormdb.insertCustTemplate(req.user.userId, 110, "fffffhhgfttyhhhjjmnjjk", function(result){			    
 				
 		//ormdb.insertCust(req.user.userId, , function(result){	
-		res.send(""); 
-		     }); 
-		} 
-		 else {
-		 	res.redirect('/verify')
-		 }
+		// res.send(""); 
+		//      }); 
+		// } 
+		//  else {
+		//  	res.redirect('/verify')
+		//  }
+		
 	
-	}); // end  app.post (create)
+	 // end  app.post (create)
 
 
 	// app.post('/delete/:id', function (req, res) {
@@ -222,7 +242,7 @@ app.get('/authenticated', function(req,res){
 	
 
 	
-};
+// };
 // // In your routeMap.js 
 // module.exports = [
 //     ['/', 'index#index'],
@@ -233,3 +253,4 @@ app.get('/authenticated', function(req,res){
  
 // // In your app.js 
 // expressPath(app, 'routeMap');
+ };

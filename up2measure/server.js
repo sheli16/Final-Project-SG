@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var firebase = require("firebase");
 var passport = require('passport');
 var session = require('express-session');
+var localStorage = require('json-localstorage');
 // var session = require('path');
 var orm = require('./db/orm.js');
 var PORT = 8080;
@@ -36,6 +37,7 @@ app.use(express.static('public'));
 
 
 //Routes-----------------------------------------------------------
+require('./routes/html-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
 // // In your app.js 

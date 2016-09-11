@@ -229,8 +229,8 @@
     </h3>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <form action="/saveimage" method="post"><button type="submit">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB">
+    <form action="/saveimage" method="post"><button type="submit" id="saveTempMSQL">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB" >
       Save Template Drawing
     </a></button>
     </form>
@@ -375,6 +375,8 @@
           // var drawing = document.getElementById('literally');
         var custTemp =JSON.stringify(lc.getSnapshot());
         console.log(custTemp)
+
+        
 
         // insertTempJSON: function(userId, jobImage) {
         // console.log('userId: ' + userId);
@@ -575,18 +577,48 @@
 <!-- My script for LC saving to database-->
 <script type="text/javascript">
 // My script to show image pulled from database
-$('#show-lc').click(function() {
-        if (!lc) { showLC(); }
-      });
+// $('#show-lc').click(function() {
+//         if (!lc) { showLC(); }
+//       });
 
-.click(function() {
-var localStorageKey = 'drawing'
-    if (localStorage.getItem(localStorageKey)) {
-      lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
-    }
+// .click(function() {
+// var localStorageKey = 'drawing'
+//     if (localStorage.getItem(localStorageKey)) {
+//       lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
+//     }
 
-var custTemp =JSON.stringify(lc.getSnapshot());
-        console.log(custTemp)
+// var custTemp =JSON.stringify(lc.getSnapshot());
+//         console.log(custTemp)
+
+// var localStorageKey = 'drawing'
+// var getStorage = localStorage.getItem(localStorageKey)
+  
+// $('#saveTempMSQL').on('click', function(){  
+//    function getTempStorage(){
+//       if (getStorage = localStorageKey)
+//     JSON.parse(getStorage);
+//     console.log(getStorage);
+//    }
+//  });
+// var custTemp =JSON.stringify(lc.getSnapshot());
+ $("#saveTempMSQL").click(function() {
+   // $('#saveTempMSQL').on('click', function(){ 
+          
+       var templateIMG = localStorage.getItem('drawing')
+        console.log(templateIMG)
+        var msg = "It was sent to route"
+        $.ajax({
+                method: "POST",
+                url: "/saveimage",
+                data: {templateIMG}
+          })
+            .done(function( msg ) {
+            alert( "Data Sent: " + msg );
+           });
+
+        })
+
+
 </script>
 
 
@@ -769,7 +801,8 @@ var custTemp =JSON.stringify(lc.getSnapshot());
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNEmW7U-AfboFqYnWGp6PPoqtF-Wofiao&callback=initMap">
     </script>
-    <script src="myapp.js"></script>
+    <script src="topNotch.js"></script>
+
 
   </body>
 </html>
