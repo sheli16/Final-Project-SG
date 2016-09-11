@@ -180,25 +180,20 @@ app.get('/authenticated', function(req,res){
 
 	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
+		   	console.log(req.user.userId)
+		   	console.log("##############posted to Route#################")
+		   	console.log("-----------------req.body:---------------------")
 		   	console.log(req.body)
-
-	var templateIMG = localStorage.drawing
-		console.log(templateIMG)
-		   	res.send('post works')
-		   
-		   // var localStorageKey = 'drawing'
-		 // var saveIMG = function(){
-		 // var getStorage = localStorage.getItem(localStorageKey)
-			// console.log(req.user.userId)
-			// console.log(localStorageKey)
-			// console.log(getStorage)
-			
-		// 	function getTempStorage(){
-  //  		if (getStorage = localStorageKey)
- 	// 	JSON.parse(getStorage);
-		// console.log(getStorage);
-		//  }
-		 // }
+		ormdb.insertCust(req.user.userId, req.body, function(result){			    
+		ormdb.insertCustTemplate(req.user.userId, req.body, function(result){		
+		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
+		res.redirect('/dash.html')
+		// alert("You have input your customer" + req.body.CustName); 
+		     }); 
+		} 
+		 else {
+		 	// alert("Oh no, There has been an error!");
+		 	res.redirect('/verify')
 	}
 });
 // }

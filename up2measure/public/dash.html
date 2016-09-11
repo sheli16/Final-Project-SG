@@ -218,15 +218,21 @@
          <div class="demo-card-event mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h5>
-     July 3, 2016<br>
-     Jane Miller<br>
+    <div name="customernumber" id="customernumber">
+     100<br></div>
+    <div name="customerDate" id="customerDate">
+     July 3, 2016<br></div>
+     <div name="customername" id="customername">
+     Paul Green<br></div>
+     <div name="customeraddress" id="customeraddress">
      2798 copper Rige Ct<br>
-    lake Mary FL, 32746<br>
-      
+    lake Mary FL, 32746<br></div>
+      <div name="customerphone1" id="customerphone1">
       555-444-5555<br>
+      <div name="customerphone2" id="customerphone2">
       555-555-5555<br>
  
-    </h3>
+    </h5>
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <form action="/saveimage" method="post"><button type="submit" id="saveTempMSQL">
@@ -600,6 +606,17 @@
 //     console.log(getStorage);
 //    }
 //  });
+// 
+
+$("#save-image").click(function() {
+          // var drawing = document.getElementById('literally');
+        var custTemp =JSON.stringify(lc.getSnapshot());
+        // var unstringify = JSON.parse(custTemp);
+        console.log(custTemp)
+  if(customerNum = )
+    var customerNum = $('#customernumber').data()
+      console.log(customerNum)
+      
 // var custTemp =JSON.stringify(lc.getSnapshot());
  // $("#saveTempMSQL").click(function() {
  //   // $('#saveTempMSQL').on('click', function(){ 
@@ -607,16 +624,16 @@
  //       var templateIMG = localStorage.getItem('drawing')
  //        console.log(templateIMG)
  //        var msg = "It was sent to route"
- //        $.post("/saveimage",templateIMG)
-
+        $.post("/saveimage", custTemp)
+ 
  //        $.ajax({
  //                method: "POST",
  //                url: "/saveimage",
  //                data: {templateIMG}
- //          })
- //            .done(function( msg ) {
- //            alert( "Data Sent: " + msg );
- //           });
+          })
+          //    .done(function( msg ) {
+          //    alert( "Data Sent: " + msg );
+          // });
 
  //        })
 </script>
