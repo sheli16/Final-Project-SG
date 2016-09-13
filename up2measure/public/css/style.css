@@ -43,6 +43,14 @@ align-content: left;
   height:px;
   /*border-radius: 24px;*/
 }
+.mdl-textfield .mdl-js-textfield{
+
+}
+
+.demo-card-wide .mdl-card .mdl-shadow--2dp{
+  width:500px;
+  height:px;
+}
 .demo-layout .demo-header .mdl-textfield {
   padding: 0px;
   margin-top: 41px;
@@ -156,7 +164,7 @@ _:-ms-input-placeholder, :root .demo-graph {
 
 }
 .demo-cards .demo-separator {
-  height: 32px;
+  height: 10px;
 }
 .demo-cards .mdl-card__title.mdl-card__title {
   color: white;
@@ -226,6 +234,7 @@ _:-ms-input-placeholder, :root .demo-graph {
 
     .mdl-card{
         background-color:#cddc39;
+
       }
 
       .demo-drawer-header{
@@ -282,7 +291,7 @@ _:-ms-input-placeholder, :root .demo-graph {
 /* wide card*/
 
 .demo-card-wide.mdl-card {
-  width: 60%px;
+  width: 60%;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;

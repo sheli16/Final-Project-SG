@@ -163,6 +163,7 @@ app.get('/authenticated', function(req,res){
 		   if (req.isAuthenticated()) {
 			console.log(req.user.userId)
 			console.log(req.body.CustName)
+
 		ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
 				
 		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
@@ -180,24 +181,24 @@ app.get('/authenticated', function(req,res){
 
 	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
+		   	var customerNumber = 109;
 		   	console.log(req.user.userId)
-		   	console.log("##############posted to Route#################")
+			console.log("##############posted to Route#################")
 		   	console.log("-----------------req.body:---------------------")
-		   	console.log(req.body)
-		ormdb.insertCust(req.user.userId, req.body, function(result){			    
-		ormdb.insertCustTemplate(req.user.userId, req.body, function(result){		
-		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
-		res.redirect('/dash.html')
-		// alert("You have input your customer" + req.body.CustName); 
-		     }); 
-		} 
-		 else {
-		 	// alert("Oh no, There has been an error!");
-		 	res.redirect('/verify')
+		   	//console.dir(req.body);
+		   	console.log("-----------------req.body.Number:---------------------")
+			var customerTemp = req.body.snapshot;
+		// ormdb.insertCust(req.user.userId, req.body, function(result){			    
+		ormdb.updateCustTemplate(req.user.userId, customerNumber, customerTemp, function(result){		
+					res.redirect('/dash.html')
+	 		}); 
+			} 
+	 		else {
+					res.redirect('/verify')
+			}
+		});
 	}
-});
 // }
-
 
   //  		function() = localStorage.getItem(localStorageKey) 
   //  	     JSON.parse(localStorage.getItem(localStorageKey));
@@ -253,4 +254,4 @@ app.get('/authenticated', function(req,res){
  
 // // In your app.js 
 // expressPath(app, 'routeMap');
- };
+ // };

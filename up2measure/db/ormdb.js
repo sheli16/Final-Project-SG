@@ -26,16 +26,20 @@ var ormdb = {
             // cb(res);
         });
     },
-
+//  Select all customers from database 
+    selectOne: function(userId, callcak) {
+        var queryString = 'SELECT * FROM jobs WHERE userId = ' + userId ; 
+        console.log('query selectOne: '+ queryString);
+        connection.query(queryString, function(err, res) {
+            return res;
+            callback(res);
+        });
+    },
 // Insert New customer into database
     insertCust: function(userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT, callback) {
         console.log('userId: ' + userId);
-        
         var queryString = 'INSERT INTO jobs(userId, jobNumb, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft) VALUES (?,?,?,?,?,?,?,?)';
-        
         console.log('query insert: '+ queryString);
-        
-
         connection.query(queryString, [userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT], function(err, res) { 
             if (err) {
                 console.log(err) 
@@ -46,80 +50,29 @@ var ormdb = {
             callback(true,null)
            // callback(res);
         });
-    }
-// Insert New customer into database
-    // insertCustTemplate: function(userId, JobNumb, JobImage, callback) {
-    //     // localStorage.getItem('drawing');
-    //     console.log('userId: ' + userId);
-    //     var imageString = "slfjkslalslkkkkknnnnsjnfnjslnflsnfm,m,m,n,nmsfdf";
-    //     var queryString = 'INSERT INTO jobs(userId, JobNumb, jobImage) VALUES (?, 110, imageString)';
-        
-    //     console.log('query insert: '+ queryString);
-        
+    },
 
-    //     connection.query(queryString, [userId, 110, imagestring ], function(err, res) { 
-    //         if (err) {
-    //             console.log(err) 
-    //             return callback(false, err)
-    //         }
+
+
+
+// // Insert Customer Template into database
+    updateCustTemplate: function(userId, JobNumb, JobImage, callback) {
+        console.log('userId: ' + userId);
+        var queryString = 'UPDATE jobs SET jobImage=? WHERE jobNumb=? AND userID=?';
+        console.log('query update: '+ queryString);
+        connection.query(queryString, [JobImage, JobNumb, userId ], function(err, user){
+        if (err) {
+                console.log(err) 
+                return callback(false, err)
+            }
             
-    //         console.log('response:', res)
-    //         callback(true,null)
-    //        // callback(res);
-
-
-    //     });
-    // }
-
-
-
-
+            // console.log('response:', res)
+            callback(true,null)
+           // callback(res);
+        });
+    }
 
 }
-
-
-            //res.redirect('/verify');
-            // (res);
-             // cb(res);
-            //return res;
-           
-
-        // });
-  
-
-// Insert the template JSON string
-    // insertTempJSON: function(userId, jobImage) {
-    //     console.log ('userId: ' + userId);
-    //     var queryString = 'INSERT INTO jobs(userId, jobImage) VALUES (?,?)';
-        
-    //     console.log('query insert: '+ queryString);
-    //     connection.query(queryString, [userId, custTemp], function(err, res) { 
-    //         //res.redirect('/verify');
-    //         // (res);
-    //          // cb(res);
-    //         // return res;
-           
-
-    //     });
-    // },
-// };
-    // openTemplateJSON: function(userId, jobImage) {
-    //     console.log('userId: ' + userId);
-    //     var queryString = 'INSERT INTO jobs(userId, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft) VALUES (?,?,?,?,?,?,?)';
-        
-    //     console.log('query insert: '+ queryString);
-    //     connection.query(queryString, [userId,jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft], function(err, res) { 
-    //         //res.redirect('/verify');
-    //         // (res);
-    //          // cb(res);
-    //         return res;
-           
-
-    //     });
-    // },
-    
-
-
 module.exports = ormdb;
 
 

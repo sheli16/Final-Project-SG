@@ -58,6 +58,8 @@
   <!--Start literally Canvas -->
     <link href="/css/literallycanvas.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
   <!-- End  -->
       <style>
     #view-source {
@@ -71,7 +73,7 @@
     }
 
     #map {
-        width: 500px;
+        width: 100%;
         height: 250px;
         background-color: grey;
       }
@@ -213,7 +215,7 @@
 
         <div class="mdl-grid demo-content"> 
 <!--  -->
-          <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <!-- <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"> -->
          <!--  -->
          <div class="demo-card-event mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
@@ -245,9 +247,9 @@
     <i class="material-icons">event</i>
   </div>
 </div>
-
+<div class="demo-separator mdl-cell--1-col"></div>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  
+  <div id="map"></div>
 
   <!-- <div class="mdl-card__menu">
     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -257,6 +259,7 @@
 
 </div>
 
+
          <!--  -->
          <!-- <div id="customer">
           <h3> Jane Miller<h3>
@@ -264,8 +267,8 @@
           <div id="customer-address">
           <h4> 2900 CopperRige Ct, Longwood, Fl<h4>
           </div> -->
-          <div id="map"></div>
-           </div>
+
+<!-- </div> -->
 <!--  -->
 
 
@@ -381,13 +384,10 @@
         });
 
 
-        // // $("#save-image").click(function() {
-        //   // var drawing = document.getElementById('literally');
-        // var custTemp = {
-        //   snapshot: JSON.stringify(lc.getSnapshot())
-        // }; 
-
-        // console.log(custTemp)
+        $("#save-image").click(function() {
+          // var drawing = document.getElementById('literally');
+        var custTemp =JSON.stringify(lc.getSnapshot());
+        console.log(custTemp)
 
         
 
@@ -406,7 +406,7 @@
         // });
  
         
-        // });
+        });
          
 
 
@@ -616,22 +616,19 @@
 // 
 
 $("#save-image").click(function() {
-          
-        // var custTemp ="Template:" + JSON.stringify(lc.getSnapshot());
-          var custTemp = {
-            snapshot: JSON.stringify(lc.getSnapshot())
-          }
+          // var drawing = document.getElementById('literally');
+        var custTemp =JSON.stringify(lc.getSnapshot());
         // var unstringify = JSON.parse(custTemp);
-            console.log(custTemp)
-        // Retrieve customer number from Dom
-          var customerNum = "Number:" + $('#customernumber').text()
-            console.log(parseInt(customerNum))
+          console.log(custTemp)
+  // if(customerNum = )
+        var customerNum = $('#customernumber').text()
+          console.log(customerNum)
 
-        // var templateObj={ 
-        //     custNumber: customerNum,
-        //     custTemplate: custTemp
-        //     };
-        //     console.log(templateObj)
+        var templateObj={ 
+            custNumber: customerNum,
+            custTemplate: custTemp
+            };
+            console.log(templateObj)
       
 // var custTemp =JSON.stringify(lc.getSnapshot());
  // $("#saveTempMSQL").click(function() {
@@ -640,12 +637,12 @@ $("#save-image").click(function() {
  //       var templateIMG = localStorage.getItem('drawing')
  //        console.log(templateIMG)
         var msg = "It was sent to route"
-        
-        // $.post("/saveimage", customerNum + custTemp)
-        $.post("/saveimage", custTemp)
-        
+        // $.post("/saveimage", custTemp + customerNum )
+        $.post("/saveimage", templateObj )
         alert( "Data Sent: " + msg );
-                  // $.ajax({
+
+ 
+ //        $.ajax({
  //                method: "POST",
  //                url: "/saveimage",
  //                data: {templateIMG}
@@ -665,12 +662,7 @@ $("#save-image").click(function() {
 
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
 
-          <form ><button type="submit" id="saveTempMSQL">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB" >
-      Save Template Drawing
-    </a></button>
-    </form>
-            
+                
 <!-- Map -->
             
             
@@ -714,7 +706,7 @@ $("#save-image").click(function() {
               <div class="demo-separator mdl-cell--1-col"></div>
             
 
-            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+            <!-- <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop"> -->
              <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__supporting-text mdl-color-text--lime-50">
                 <h3>Add New Customer</h3>

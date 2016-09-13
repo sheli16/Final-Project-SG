@@ -71,7 +71,7 @@
     }
 
     #map {
-        width: 500px;
+        width: 100%;
         height: 250px;
         background-color: grey;
       }
@@ -156,7 +156,7 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Paul Green 2800 Rige ct, longwood Fl</span>
+          <span class="mdl-layout-title">Home</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -233,7 +233,6 @@
       555-555-5555<br>
  
     </h5>
-
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <form action="/saveimage" method="post"><button type="submit" id="saveTempMSQL">
@@ -247,14 +246,12 @@
 </div>
 
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  
-
-  <!-- <div class="mdl-card__menu">
+  <div id="map"></div>
+  <div class="mdl-card__menu">
     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
       <i class="material-icons">share</i>
     </button>
-  </div> -->
-
+  </div>
 </div>
 
          <!--  -->
@@ -264,7 +261,6 @@
           <div id="customer-address">
           <h4> 2900 CopperRige Ct, Longwood, Fl<h4>
           </div> -->
-          <div id="map"></div>
            </div>
 <!--  -->
 
@@ -381,13 +377,10 @@
         });
 
 
-        // // $("#save-image").click(function() {
-        //   // var drawing = document.getElementById('literally');
-        // var custTemp = {
-        //   snapshot: JSON.stringify(lc.getSnapshot())
-        // }; 
-
-        // console.log(custTemp)
+        $("#save-image").click(function() {
+          // var drawing = document.getElementById('literally');
+        var custTemp =JSON.stringify(lc.getSnapshot());
+        console.log(custTemp)
 
         
 
@@ -406,7 +399,7 @@
         // });
  
         
-        // });
+        });
          
 
 
@@ -616,43 +609,50 @@
 // 
 
 $("#save-image").click(function() {
-          
-        // var custTemp ="Template:" + JSON.stringify(lc.getSnapshot());
-          var custTemp = {
-            snapshot: JSON.stringify(lc.getSnapshot())
-          }
+          // var drawing = document.getElementById('literally');
+        var custTemp =JSON.stringify(lc.getSnapshot());
         // var unstringify = JSON.parse(custTemp);
-            console.log(custTemp)
-        // Retrieve customer number from Dom
-          var customerNum = "Number:" + $('#customernumber').text()
-            console.log(parseInt(customerNum))
+        console.log(custTemp)
+  if(customerNum = )
+    var customerNum = $('#customernumber').data()
+      console.log(customerNum)
 
-        // var templateObj={ 
-        //     custNumber: customerNum,
-        //     custTemplate: custTemp
-        //     };
-        //     console.log(templateObj)
-      
+
+insertCustTemp: function(custTemp, customerNum,  callback) {
+        console.log('userId: ' + userId);
+      // var queryString = "UPDATE jobs SET jobImage= custTemp WHERE jobName=customerNum;"
+       var queryString = "UPDATE jobs SET jobImage="+ custTemp "WHERE jobName="+ customerNum;
+        console.log('query insert: '+ queryString);
+
+
+        connection.query(queryString, [custTemp, CustNumb], function(err, res) { 
+            if (err) {
+                console.log(err) 
+                return callback(false, err)
+            }
+            
+            console.log('response:', res)
+            callback(true,null)
+           // callback(res);
+        });
+
+
 // var custTemp =JSON.stringify(lc.getSnapshot());
  // $("#saveTempMSQL").click(function() {
  //   // $('#saveTempMSQL').on('click', function(){ 
           
  //       var templateIMG = localStorage.getItem('drawing')
  //        console.log(templateIMG)
-        var msg = "It was sent to route"
-        
-        // $.post("/saveimage", customerNum + custTemp)
-        $.post("/saveimage", custTemp)
-        
-        alert( "Data Sent: " + msg );
-                  // $.ajax({
+ //        var msg = "It was sent to route"
+        // $.post("/saveimage", custTemp)
+ 
+ //        $.ajax({
  //                method: "POST",
  //                url: "/saveimage",
  //                data: {templateIMG}
           })
           //    .done(function( msg ) {
-            // var msg = "It was sent to route"
-            //   alert( "Data Sent: " + msg );
+          //    alert( "Data Sent: " + msg );
           // });
 
  //        })

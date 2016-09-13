@@ -19,10 +19,10 @@ app.set('view engine', 'handlebars');
 //-----------------------------------------------------------------
 
 //Middleware-------------------------------------------------------
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+//app.use(bodyParser.text());
+//app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 //session is used to keep the user logged in 
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 6000000 }, resave: true, saveUninitialized: true}))
