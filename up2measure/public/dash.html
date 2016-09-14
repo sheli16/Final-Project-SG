@@ -628,10 +628,10 @@ var ShowTempLC = function(data) {
 // -------This function retrieves data from the database-----------------
 $('#show-lc').click(function() {
           lc.clear();
-          
+        
         var msg = "It was sent to route"
         
-        $.get(baseURL+"/retrieveTemplate", function(data) {
+        $.get("/retrieveTemplate", function(data, status){
           alert( "Request Sent: " + msg );
           console.log('success');
           console.log(data.jobImage);

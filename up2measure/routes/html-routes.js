@@ -131,10 +131,10 @@ app.get('/authenticated', function(req,res){
 			console.log(req.user.userId);
 			console.log("-----------------customer number:---------------------")
 			var customerNumber = 107;
-		ormdb.retrieveTempJSON(req.user.userId, customerNumber, function(result){			    
-
+		ormdb.retrieveTempJSON(req.user.userId, customerNumber, function(err, data){			    
+			console.log("----------------- image:data---------------------")
 			res.render('dash', {
-				
+				image:data
 			});
 		  });
 		}

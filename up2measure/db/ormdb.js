@@ -27,7 +27,7 @@ var ormdb = {
         });
     },
 //  Select one  Template from database 
-    retrieveTempJSON: function(userId, JobNumb, callcak) {
+    retrieveTempJSON: function(userId, JobNumb, callback) {
         var queryString = 'SELECT jobImage FROM jobs WHERE jobNumb=? AND userID=?';
         console.log('query retrieveTempJSON: '+ queryString);
         connection.query(queryString,[JobNumb, userId], function(err, res) {
@@ -37,6 +37,7 @@ var ormdb = {
             }
             
             console.log('response:', res)
+            //callback(true,null)
             // callback(true,null)
         });
     },
