@@ -126,7 +126,7 @@ app.get('/authenticated', function(req,res){
 			}
 	});
 	
-	app.get('/templateDrawing', function(req, res){
+	app.get('/retrieveTemplate', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log(req.user.userId);
 		ormdb.insertTempJSON(req.user.userId, req.body.custTemp, function(result){			    
@@ -181,13 +181,15 @@ app.get('/authenticated', function(req,res){
 
 	app.post('/saveimage', function (req, res) {
 		   if (req.isAuthenticated()) {
-		   	var customerNumber = 109;
+		   	// var customerNumber = 109;
 		   	console.log(req.user.userId)
 			console.log("##############posted to Route#################")
-		   	console.log("-----------------req.body:---------------------")
-		   	//console.dir(req.body);
-		   	console.log("-----------------req.body.Number:---------------------")
-			var customerTemp = req.body.snapshot;
+		   	console.log("-----------------req.body.snapshot:---------------------")
+		    console.log(req.body.snapshot)
+		   	console.log("-----------------req.body.snapshot:---------------------")
+		   	console.log(req.body.jobNo)
+		   		var customerTemp = req.body.snapshot;
+				var customerNumber = req.body.jobNo;
 		// ormdb.insertCust(req.user.userId, req.body, function(result){			    
 		ormdb.updateCustTemplate(req.user.userId, customerNumber, customerTemp, function(result){		
 					res.redirect('/dash.html')

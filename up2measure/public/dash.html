@@ -219,7 +219,7 @@
   <div class="mdl-card__title mdl-card--expand">
     <h5>
     <div name="customernumber" id="customernumber">
-     100<br></div>
+     110<br></div>
     <div name="customerDate" id="customerDate">
      July 3, 2016<br></div>
      <div name="customername" id="customername">
@@ -296,15 +296,15 @@
 
       <div class="toolset">
         <span class='toolLabel'>Actions:</span>
-        <a href="javascript:void(0);" class='tool' id="open-image">Open image</a>
+        <a href="javascript:void(0);" class='tool' id="open-image">Printable image</a>
 
         <!-- <a href="javascript:void(0);" class='tool' id="save-image" action="/saveTemplate" method="post">Save image</a> -->
         <a href="javascript:void(0);" class='tool' id="save-image">Save image</a>
         <a href="javascript:void(0);" class='tool' id="change-size">Change size</a>
         <a href="javascript:void(0);" class='tool' id="reset-size">Reset size</a>
-        <a href="javascript:void(0);" class='tool' id="hide-lc">Teardown</a>
-        <a href="javascript:void(0);" class='tool' id="show-lc">Setup</a>
-        <a href="javascript:void(0);" class='tool' id="clear-lc">Clear</a>
+        <a href="javascript:void(0);" class='tool' id="hide-lc">Hide or Teardown</a>
+        <a href="javascript:void(0);" class='tool' id="show-lc">Open Template</a>
+        <a href="javascript:void(0);" class='tool' id="clear-lc">Clear or New Template</a>
       </div>
 
       <div class="toolset">
@@ -357,6 +357,9 @@
           strokeWidths: [1, 5, 8],
           secondaryColor: 'transparent'
 
+
+
+
 // other tools------------
 
 
@@ -374,11 +377,17 @@
         lc.on('pan', save);
         lc.on('zoom', save);
 
-         $("#open-image").click(function() {
+
+
+// ---------This is our printable image click function scaled up---------------------------
+        $("#open-image").click(function() {
          window.open(lc.getImage({
-         scale: 1, margin: {top: 10, right: 10, bottom: 10, left: 10}
+         scale: 2, margin: {top: 10, right: 10, bottom: 10, left: 10}
         }).toDataURL());
+
         });
+
+
 
 
         // // $("#save-image").click(function() {
@@ -409,7 +418,7 @@
         // });
          
 
-
+// ###############################The original open image function#########################
         //  $("#open-image").click(function() {
         //   var loadImage = lc.loadSnapshot(JSON.parse('drawing'));
         //   console.log();
@@ -581,9 +590,9 @@
         }
       });
 
-      $('#show-lc').click(function() {
-        if (!lc) { showLC(); }
-      });
+      // $('#show-lc').click(function() {
+      //   if (!lc) { showLC(); }
+      // });
     </script>
 
 
@@ -600,62 +609,68 @@
 //       lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
 //     }
 
-// var custTemp =JSON.stringify(lc.getSnapshot());
-//         console.log(custTemp)
-
-// var localStorageKey = 'drawing'
-// var getStorage = localStorage.getItem(localStorageKey)
-  
-// $('#saveTempMSQL').on('click', function(){  
-//    function getTempStorage(){
-//       if (getStorage = localStorageKey)
-//     JSON.parse(getStorage);
-//     console.log(getStorage);
 //    }
 //  });
-// 
+// ---------This is our Retrieve image from database Get template---------------------------
+var ShowTempLC = function(data) {
+        lc = LC.init(containerOne, {
+          snapshot: lc.loadSnapshot(JSON.parse(data)),
+          imageURLPrefix: 'img/lc-images',
+          defaultStrokeWidth: 1,
+          strokeWidths: [1, 5, 8],
+          secondaryColor: 'transparent'
+                              
+          });
+}
 
-$("#save-image").click(function() {
+// -------This function retrieves data from the database-----------------
+$('#show-lc').click(function() {
+          lc.clear();
           
-        // var custTemp ="Template:" + JSON.stringify(lc.getSnapshot());
-          var custTemp = {
-            snapshot: JSON.stringify(lc.getSnapshot())
-          }
-        // var unstringify = JSON.parse(custTemp);
-            console.log(custTemp)
-        // Retrieve customer number from Dom
-          var customerNum = "Number:" + $('#customernumber').text()
+        var msg = "It was sent to route"
+        alert( "Request Sent: " + msg );
+        $.getJSON("/retrieveTemplate", "json", function(data) {
+          console.log('success');
+            if (!lc) { 
+              showTempLC(data);
+            }         
+          })
+
+           });     
+        
+          
+
+       
+
+// Send image of template to the database--------------------------
+$("#save-image").click(function() {
+       
+           // Retrieve customer number from Dom
+          var customerNum = parseInt($('#customernumber').text())
             console.log(parseInt(customerNum))
 
-        // var templateObj={ 
-        //     custNumber: customerNum,
-        //     custTemplate: custTemp
-        //     };
-        //     console.log(templateObj)
-      
-// var custTemp =JSON.stringify(lc.getSnapshot());
- // $("#saveTempMSQL").click(function() {
- //   // $('#saveTempMSQL').on('click', function(){ 
-          
- //       var templateIMG = localStorage.getItem('drawing')
- //        console.log(templateIMG)
+            var custTemp = {
+            jobNo: parseInt(customerNum),
+            snapshot: JSON.stringify(lc.getSnapshot())
+            
+          }
+          console.log(custTemp)
         var msg = "It was sent to route"
-        
-        // $.post("/saveimage", customerNum + custTemp)
-        $.post("/saveimage", custTemp)
+ 
+        $.post("/saveimage", custTemp);
         
         alert( "Data Sent: " + msg );
                   // $.ajax({
  //                method: "POST",
  //                url: "/saveimage",
  //                data: {templateIMG}
+          
           })
           //    .done(function( msg ) {
             // var msg = "It was sent to route"
             //   alert( "Data Sent: " + msg );
           // });
 
- //        })
 </script>
 
 
@@ -672,8 +687,6 @@ $("#save-image").click(function() {
     </form>
             
 <!-- Map -->
-            
-            
             <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
                 <h3>Job Specs</h3>
@@ -712,7 +725,6 @@ $("#save-image").click(function() {
             </div>
             
               <div class="demo-separator mdl-cell--1-col"></div>
-            
 
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
              <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
