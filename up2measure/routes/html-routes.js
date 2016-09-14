@@ -129,9 +129,11 @@ app.get('/authenticated', function(req,res){
 	app.get('/retrieveTemplate', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log(req.user.userId);
-		ormdb.insertTempJSON(req.user.userId, req.body.custTemp, function(result){			    
+			console.log("-----------------customer number:---------------------")
+			var customerNumber = 107;
+		ormdb.retrieveTempJSON(req.user.userId, customerNumber, function(result){			    
 
-			res.render('dash.html', {
+			res.render('dash', {
 				
 			});
 		  });

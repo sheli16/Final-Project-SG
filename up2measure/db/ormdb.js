@@ -26,13 +26,18 @@ var ormdb = {
             // cb(res);
         });
     },
-//  Select all customers from database 
-    selectOne: function(userId, callcak) {
-        var queryString = 'SELECT * FROM jobs WHERE userId = ' + userId ; 
-        console.log('query selectOne: '+ queryString);
-        connection.query(queryString, function(err, res) {
-            return res;
-            callback(res);
+//  Select one  Template from database 
+    retrieveTempJSON: function(userId, JobNumb, callcak) {
+        var queryString = 'SELECT jobImage FROM jobs WHERE jobNumb=? AND userID=?';
+        console.log('query retrieveTempJSON: '+ queryString);
+        connection.query(queryString,[JobNumb, userId], function(err, res) {
+            if (err) {
+                console.log(err) 
+                return callback(false, err)
+            }
+            
+            console.log('response:', res)
+            // callback(true,null)
         });
     },
 // Insert New customer into database
