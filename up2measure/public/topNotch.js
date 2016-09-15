@@ -5,13 +5,16 @@ $( document ).ready();
 var loadCustomers = function(){
 $.get( "/retrieveCustomers", function(data, status) {
   alert( "success" );
-  console.log(data[0])
-  console.log(data[1])
-  console.log(data[2])
+  console.log(data)
+  
+
+  $('a#job').text(data[0].jobNumb, data[0].jobName)
 })
-  .done(function() {
-   //  console.log("TempDBpar:"+ data[0].jobImage)
-   // var TempDBpar = JSON.parse(data[0].jobImage);
+  .done(function(data) {
+// for (var i= 0; i< data.length;i++)
+//    console.log(data[i].jobName)
+//    $('a#job').text(data[i].jobName)
+
     alert( "second success" );
     // console.log(TempDBpar)
     // lc.loadSnapshot(TempDBpar)

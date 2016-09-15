@@ -19,7 +19,7 @@ var ormdb = {
     },
 //  Select cusomters from database 
     retrieveCustomers: function(userId, cbFunction) {
-        var queryString = 'SELECT * jobNumb, jobName FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
+        var queryString = 'SELECT jobNumb, jobName FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
         console.log('query retrieveCustomers: '+ queryString);
         connection.query(queryString,[userId], function(err, res) {
             if (err) {

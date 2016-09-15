@@ -301,3 +301,8 @@ _:-ms-input-placeholder, :root .demo-graph {
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+
+element.style {
+    width: 600px;
+    height: 700px;
+}
