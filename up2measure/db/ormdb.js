@@ -33,11 +33,11 @@ var ormdb = {
         connection.query(queryString,[JobNumb, userId], function(err, res) {
             if (err) {
                 console.log(err) 
-                return callback(false, err)
+                return cbFunction(err)
             }
            else{
             console.log('response:', res)
-            cbFunction(res)
+            cbFunction(null, res)
            }
         });
     },

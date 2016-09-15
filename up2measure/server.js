@@ -10,10 +10,10 @@ var localStorage = require('json-localstorage');
 var ls = require('local-storage');
 
 // Local Storage for store.js
-global.localStorage = require('localStorage')
-var store = require('./store')
-store.set('foo', 1)
-console.log(store.get('foo'))
+// global.localStorage = require('localStorage')
+// var store = require('./store')
+// store.set('foo', 1)
+// console.log(store.get('foo'))
 // var session = require('path');
 var orm = require('./db/orm.js');
 var ormdb = require('./db/ormdb.js');

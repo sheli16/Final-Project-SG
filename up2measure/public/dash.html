@@ -647,15 +647,25 @@ $('#show-lc').click(function() {
 // and remember the jqxhr object for this request
 $.get( "/retrieveTemplate", function(data, status) {
   alert( "success" );
+  console.log(data[0].jobImage)
 })
-  .done(function() {
+  .done(function(data) {
+    console.log("TempDBpar:"+ data[0].jobImage)
+   var TempDBpar = JSON.parse(data[0].jobImage);
     alert( "second success" );
+    console.log(TempDBpar)
+    lc.loadSnapshot(TempDBpar)
+    // return TempDBpar;
+    
   })
   .fail(function() {
+    console.log()
     alert( "error" );
+    
   })
-  .always(function() {
+  .always(function(TempDBpar) {
     alert( "finished" );
+    console.log(TempDBpar)
   });
  
 // Perform other work here ...
