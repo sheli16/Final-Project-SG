@@ -17,6 +17,23 @@ var ormdb = {
             
         });
     },
+//  Select cusomters from database 
+    retrieveCustomers: function(userId, cbFunction) {
+        var queryString = 'SELECT * jobNumb, jobName FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
+        console.log('query retrieveCustomers: '+ queryString);
+        connection.query(queryString,[userId], function(err, res) {
+            if (err) {
+                console.log(err) 
+                return cbFunction(err)
+            }
+           else{
+            console.log('response:', res)
+            cbFunction(null, res)
+           }
+        });
+    },
+
+
 //  Select all customers from database 
     selectAll: function(userId) {
         var queryString = 'SELECT * FROM jobs WHERE userId = ' + userId; 
@@ -61,7 +78,7 @@ var ormdb = {
 
 
 
-// // Insert Customer Template into database
+// // Insert and Save Customer Template into database
     updateCustTemplate: function(userId, JobNumb, JobImage, callback) {
         console.log('userId: ' + userId);
         var queryString = 'UPDATE jobs SET jobImage=? WHERE jobNumb=? AND userID=?';

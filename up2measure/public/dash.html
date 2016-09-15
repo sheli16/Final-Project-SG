@@ -50,10 +50,10 @@
     <!-- <link rel="stylesheet" href="material.min.js"> -->
     <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
     
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
  <!-- React Production files -->
  <script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
-<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
 
   <!--Start literally Canvas -->
     <link href="/css/literallycanvas.css" rel="stylesheet">
@@ -147,14 +147,12 @@
         left: 0;
         border-radius: 0.25rem;
       }
-
-
-
-    </style>
+</style>
   </head>
   <body>
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+  <!-- start Header section -->
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header"> 
+      <header class="demo-header mdl-layout__header mdl-color--indigo-800 mdl-color-text--white">
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Paul Green 2800 Rige ct, longwood Fl</span>
           <div class="mdl-layout-spacer"></div>
@@ -177,9 +175,12 @@
           </ul>
         </div>
       </header>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+<!-- End Header section -->
+
+<!-- Start Drawer Section -->
+     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="/img/logos/topnotch_logoWHT.png" class="demo-avatar">
+          <img src="./img/logos/topnotch_logoWHT.png" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>view order</span>
             <div class="mdl-layout-spacer"></div>
@@ -195,99 +196,73 @@
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--indigo-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+          <a class="mdl-navigation__link" href="" Id="job1"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Home</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job2"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Inbox</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job3"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Trash</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Spam</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job5"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Forums</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job6"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Updates</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job7"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Promos</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job8"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Purchases</a>
+          
+          <a class="mdl-navigation__link" href="" Id="job9"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Social</a>
+          
           <div class="mdl-layout-spacer"></div>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+          
+          <a class="mdl-navigation__link" href="" Id="job10"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i><span class="visuallyhidden">Help</span></a>
         </nav>
       </div>
+<!-- Main Section -->
       <main class="mdl-layout__content mdl-color--white">
-
-
         <div class="mdl-grid demo-content"> 
 <!--  -->
           <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-         <!--  -->
+<!--  -->
          <div class="demo-card-event mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-    <h5>
-    <div name="customernumber" id="customernumber">
-     107<br></div>
-    <div name="customerDate" id="customerDate">
-     July 3, 2016<br></div>
-     <div name="customername" id="customername">
-     Paul Green<br></div>
-     <div name="customeraddress" id="customeraddress">
-     2798 copper Rige Ct<br>
-    lake Mary FL, 32746<br></div>
-      <div name="customerphone1" id="customerphone1">
-      555-444-5555<br>
-      <div name="customerphone2" id="customerphone2">
-      555-555-5555<br>
- 
-    </h5>
-
-  </div>
+          <div class="mdl-card__title mdl-card--expand">
+            <h5>
+            <div name="customernumber" id="customernumber">
+             107<br></div>
+            <div name="customerDate" id="customerDate">
+             July 3, 2016<br></div>
+             <div name="customername" id="customername">
+             Paul Green<br></div>
+             <div name="customeraddress" id="customeraddress">
+             2798 copper Rige Ct<br>
+            lake Mary FL, 32746<br></div>
+              <div name="customerphone1" id="customerphone1">
+              555-444-5555<br>
+              <div name="customerphone2" id="customerphone2">
+              555-555-5555<br></h5>
+            </div>
   <div class="mdl-card__actions mdl-card--border">
-    <form action="/saveimage" method="post"><button type="submit" id="saveTempMSQL">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB" >
-      Save Template Drawing
-    </a></button>
-    </form>
     <div class="mdl-layout-spacer"></div>
     <i class="material-icons">event</i>
   </div>
 </div>
 
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  
-
-  <!-- <div class="mdl-card__menu">
+<div id="map"></div>
+<!-- <iframe width="600" height="450" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/search?q="+ Address +"keyAIzaSyBNEmW7U-AfboFqYnWGp6PPoqtF-Wofiao" allowfullscreen></iframe> -->
+  <div class="mdl-card__menu">
     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
       <i class="material-icons">share</i>
     </button>
-  </div> -->
+  </div>
+  </div>
 
-</div>
-
-         <!--  -->
-         <!-- <div id="customer">
-          <h3> Jane Miller<h3>
-          </div>
-          <div id="customer-address">
-          <h4> 2900 CopperRige Ct, Longwood, Fl<h4>
-          </div> -->
-          <div id="map"></div>
+<!-- Google Map -->
+          
            </div>
 <!--  -->
-
-
-            <!-- <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop"> -->
-              <!-- <div id="map"></div> -->
-                
-
-
-
-
-
-            <!-- </svg>
-            <svg fill="currentColor" width="600px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              
-            </svg> -->
-            <!-- <svg fill="currentColor" width="0px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              
-            </svg>
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              
-            </svg> -->
-         
+       
           <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
 
 <!-- Start litterally Canvas html -->
@@ -327,17 +302,16 @@
         <a href="javascript:void(0);" class='tool' id="colorTool-blue">Blue</a>
         <a href="javascript:void(0);" class='tool' id="colorTool-red">Red</a>
       </div>
-
-      <br>
-      <div class="svg-container"
-          style="display: inline-block; border: 1px solid yellow"></div>
+        <br>
+     <!--  <div class="svg-container"
+          style="display: inline-block; border: 1px solid yellow"></div> -->
     </div>
-
-    <script src="./js/jquery-1.8.2.js"></script>
-<script src="./js/react-0.14.6.js"></script>
-    <script src="./js/literallycanvas-core.js"></script>
-<script src="literallycanvas.js"></script>
-    <script type="text/javascript">
+<!-- Get LC up and running -->
+        <script src="./js/jquery-1.8.2.js"></script>
+        <script src="./js/react-0.14.6.js"></script>
+        <script src="./js/literallycanvas-core.js"></script>
+        <script src="literallycanvas.js"></script>
+        <script type="text/javascript">
       var lc = null;
       var tools;
       var strokeWidths;
@@ -356,17 +330,14 @@
           defaultStrokeWidth: 1,
           strokeWidths: [1, 5, 8],
           secondaryColor: 'transparent'
+        // other tools------------
 
 
 
 
-// other tools------------
-
-
-
-
-// ----------------------------
+        // ----------------------------
         }); 
+       
         window.demoLC = lc;
 
         var save = function() {
@@ -384,45 +355,11 @@
          window.open(lc.getImage({
          scale: 2, margin: {top: 10, right: 10, bottom: 10, left: 10}
         }).toDataURL());
-
         });
-
-
-
-
-        // // $("#save-image").click(function() {
-        //   // var drawing = document.getElementById('literally');
-        // var custTemp = {
-        //   snapshot: JSON.stringify(lc.getSnapshot())
-        // }; 
-
-        // console.log(custTemp)
-
-        
-
-        // insertTempJSON: function(userId, jobImage) {
-        // console.log('userId: ' + userId);
-        // var queryString = 'INSERT INTO jobs(userId, jobImage) VALUES (?,?)';
-        
-        // console.log('query insert: '+ queryString);
-        // connection.query(queryString, [userId, jobImage], function(err, res) { 
-        //     //res.redirect('/verify');
-        //     // (res);
-        //      // cb(res);
-        //     return res;
-           
-
-        // });
- 
-        
-        // });
-         
-
 // ###############################The original open image function#########################
         //  $("#open-image").click(function() {
         //   var loadImage = lc.loadSnapshot(JSON.parse('drawing'));
-        //   console.log();
-           
+        //   console.log();    
         // });
 
          $("#change-size").click(function() {
@@ -620,9 +557,8 @@ var ShowTempLC = function() {
           imageURLPrefix: 'img/lc-images',
           defaultStrokeWidth: 1,
           strokeWidths: [1, 5, 8],
-          secondaryColor: 'transparent'
-                              
-          });
+          secondaryColor: 'transparent'                    
+    });
 }
 
 // -------This function retrieves data from the database-----------------
@@ -817,7 +753,7 @@ $("#save-image").click(function() {
 
 
              <!-- <div id=""></div> -->
-             <!--  <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
                 <h2 class="mdl-card__title-text">Updates</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -825,7 +761,7 @@ $("#save-image").click(function() {
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>

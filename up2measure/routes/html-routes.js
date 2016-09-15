@@ -99,11 +99,6 @@ app.get('/authenticated', function(req,res){
 		});
 	});
 
-
-
-
-
-
 // ----------------------------basic routes
 	app.get('/', function(req, res){
 		res.render('index', {
@@ -201,61 +196,21 @@ app.get('/authenticated', function(req,res){
 					res.redirect('/verify')
 			}
 		});
-	}
-// }
-
-  //  		function() = localStorage.getItem(localStorageKey) 
-  //  	     JSON.parse(localStorage.getItem(localStorageKey));
-		// 	console.log(req.user.userId)
-		// 	console.log(localStorageKey)
-		// 	}
-		// });
-		// ormdb.insertCustTemplate(req.user.userId, 110, "fffffhhgfttyhhhjjmnjjk", function(result){			    
-				
-		//ormdb.insertCust(req.user.userId, , function(result){	
-		// res.send(""); 
-		//      }); 
-		// } 
-		//  else {
-		//  	res.redirect('/verify')
-		//  }
-		
-	
-	 // end  app.post (create)
+	// }
 
 
-	// app.post('/delete/:id', function (req, res) {
-	// 		   if (req.isAuthenticated()) {
-				
-	// 			ormdb.deleteCust(req.params.id, function(result){			    
-	// 					res.redirect('/dash.html'); 
-	// 		    }); 
-	// 		} else {
-	// 			res.redirect('/verify')
-	// 		}
-			   	
-
-	// });
-
-	// app.post('/update/:id', function (req, res) {
-	// 	    //connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [true, req.params.id]);            
- //           orm.updateOne('inventory', 'devoured', req.params.id,  function(result){
- //            console.log('not ready for this function yet')	
- //           	res.redirect('/dash');
- // 			});
- //    });// end  app.post (update) 
-	
-
-	
-// };
-// // In your routeMap.js 
-// module.exports = [
-//     ['/', 'index#index'],
-//     ['login', 'auth#login', 'post'],
-//     ['items/comments/create', 'items/comments#create', 'auth#login', 'post'],
-//     ['admin/users/remove', 'admin/users#remove', 'auth#login', 'auth#isAdmin', 'post']
-// ];
- 
-// // In your app.js 
-// expressPath(app, 'routeMap');
- // };
+app.get('/retrieveCustomers', function(req, res){
+		if (req.isAuthenticated()) {
+			console.log("-----------------UserID:---------------------")
+			console.log(req.user.userId);
+		ormdb.retrieveCustomers(req.user.userId, function(err, data){			    
+			console.log("----------------- customer data - HtmlRoutes---------------------")
+			console.log(data);
+			res.send(data);
+		  });
+		}
+		else {
+			res.redirect('/verify');
+			}
+		});
+};
