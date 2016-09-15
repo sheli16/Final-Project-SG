@@ -8,7 +8,6 @@ var ReactDOM = require('react-dom');
 var bodyParser = require('body-parser');
 var localStorage = require('json-localstorage');
 var ls = require('local-storage');
-var mysql = require('mysql');
 
 // var LiterCanvas = require('../public/literallycanvas.js');
 // var LC = require('literallycanvas');
@@ -136,7 +135,7 @@ app.get('/authenticated', function(req,res){
 		ormdb.retrieveTempJSON(req.user.userId, customerNumber, function(err, res){			    
 			console.log("----------------- image:data - HtmlRoutes---------------------")
 			console.log(res)
-			res.render('dash', {
+			res.render('dash', { 
 				
 			});
 		  });

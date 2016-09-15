@@ -27,7 +27,7 @@ var ormdb = {
         });
     },
 //  Select one  Template from database 
-    retrieveTempJSON: function(userId, JobNumb, callback) {
+    retrieveTempJSON: function(userId, JobNumb, cbFunction) {
         var queryString = 'SELECT jobImage FROM jobs WHERE jobNumb=? AND userID=?';
         console.log('query retrieveTempJSON: '+ queryString);
         connection.query(queryString,[JobNumb, userId], function(err, res) {
@@ -35,10 +35,10 @@ var ormdb = {
                 console.log(err) 
                 return callback(false, err)
             }
-            
+           else{
             console.log('response:', res)
-            //callback(true,null)
-            // callback(true,null)
+            cbFunction(res)
+           }
         });
     },
 // Insert New customer into database
@@ -66,7 +66,7 @@ var ormdb = {
         console.log('userId: ' + userId);
         var queryString = 'UPDATE jobs SET jobImage=? WHERE jobNumb=? AND userID=?';
         console.log('query update: '+ queryString);
-        connection.query(queryString, [JobImage, JobNumb, userId ], function(err, user){
+        connection.query(queryString, [JobImage, JobNumb, userId ], function(err, user){ 
         if (err) {
                 console.log(err) 
                 return callback(false, err)

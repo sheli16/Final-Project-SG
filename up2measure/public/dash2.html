@@ -49,6 +49,8 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.cyan-light_blue.min.css">
     <!-- <link rel="stylesheet" href="material.min.js"> -->
     <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+
     
 <link rel="stylesheet" href="css/style.css">
  <!-- React Production files -->
@@ -58,6 +60,11 @@
   <!--Start literally Canvas -->
     <link href="/css/literallycanvas.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+        <!-- Store.js -->
+    <script src="js/store.min.js"></script>
+  
   <!-- End  -->
       <style>
     #view-source {
@@ -580,8 +587,37 @@
     </script>
 
 
+ 
+
+
 <!-- My script for LC saving to database-->
 <script type="text/javascript">
+
+$("#save-image").click(function() {
+
+
+
+store.set('user2', { name: 'Debby', likes: 'javascript' })
+alert("Hi my name is " + store.get('user2').name + "!")
+
+          })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // My script to show image pulled from database
 // $('#show-lc').click(function() {
 //         if (!lc) { showLC(); }

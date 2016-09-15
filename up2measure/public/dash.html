@@ -614,7 +614,7 @@
 
 var baseURL = "http://localhost:8080"
 // ---------This is our Retrieve image from database Get template---------------------------
-var ShowTempLC = function(data) {
+var ShowTempLC = function() {
         lc = LC.init(containerOne, {
           snapshot: lc.loadSnapshot(JSON.parse(data)),
           imageURLPrefix: 'img/lc-images',
@@ -626,21 +626,47 @@ var ShowTempLC = function(data) {
 }
 
 // -------This function retrieves data from the database-----------------
-$('#show-lc').click(function() {
-          lc.clear();
+// $('#show-lc').click(function() {
+//           // lc.clear();
         
-        var msg = "It was sent to route"
-        
-        $.get("/retrieveTemplate", function(data, status){
-          alert( "Request Sent: " + msg );
-          console.log('success');
-          console.log(data.jobImage);
-            // if (!lc) { 
-              ShowTempLC(data.jobImage);
-            // }         
-          })
+//         var msg = "It was sent to route"
+         
+//         $.get("/retrieveTemplate", function(data, status){
+         
 
-           });     
+//           alert( "Data:" + data);
+//           console.log(data);
+//             // if (!lc) { 
+//               // ShowTempLC(data.jobImage);
+//             // }         
+//           });
+//       });    
+
+$('#show-lc').click(function() {
+    // Assign handlers immediately after making the request,
+// and remember the jqxhr object for this request
+$.get( "/retrieveTemplate", function(data, status) {
+  alert( "success" );
+})
+  .done(function() {
+    alert( "second success" );
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+
+});
+         
+
+
+
         
           
 
