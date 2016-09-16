@@ -155,7 +155,7 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header"> 
       <header class="demo-header mdl-layout__header mdl-color--indigo-800 mdl-color-text--white">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Paul Green 2800 Rige ct, longwood Fl</span>
+          <span class="mdl-layout-title">Is your Business TOP Notch. Is your business up to measure?</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -163,18 +163,19 @@
             </label>
             <div class="mdl-textfield__expandable-holder">
               <form>
-              <input class="mdl-textfield__input" type="text" id="search" name="searchTerm" value="">
+              <input class="mdl-textfield__input" type="text"  type="submit">
               <label class="mdl-textfield__label" for="search">Enter Name or Job Number</label>
             </div>
+            </form>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
-          </form>
+          
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">About</li>
-            <li class="mdl-menu__item">Contact</li>
-            <li class="mdl-menu__item">Legal information</li>
+            <li class="mdl-menu__item" >Home</li>
+            <li class="mdl-menu__item" >logout</li>
+            <li class="mdl-menu__item"></li>
           </ul>
         </div>
       </header>
@@ -593,31 +594,21 @@ $("#save-image").click(function() {
             jobNo: parseInt(customerNum),
             snapshot: JSON.stringify(lc.getSnapshot())
             
-          }
-          console.log(custTemp)
-        var msg = "It was sent to route"
+            }
+            console.log(custTemp)
+            var msg = "It was sent to route"
  
-        $.post("/saveimage", custTemp);
+            $.post("/saveimage", custTemp);
         
-        alert( "Data Sent: " + msg );
+            alert( "Data Sent: " + msg );
 
-          })
+            })
 
-</script>
-
-
+          </script>
 <!--End litterally Canvas  -->
           </div>
 
-
-          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-
-          <form ><button type="submit" id="saveTempMSQL">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="saveIMGtoDB" >
-      Save Template Drawing
-    </a></button>
-    </form>
-            
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">        
 <!-- Map -->
             <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
@@ -694,11 +685,23 @@ $("#save-image").click(function() {
   </div>
 
 <div class="mdl-card__actions mdl-card--border">
-                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50" name="SaveNew" value="Save">Submit</button>
+                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50" name="SaveNew" value="Save" id="newcust">Submit</button>
                 <div class="mdl-layout-spacer"></div>
                 <!-- <i class="material-icons">location_on</i> -->
+                
+                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50" name="SaveNew" value="Save" id="delete">Delete</button>
+                <div class="mdl-layout-spacer"></div>
+
+                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50" name="SaveNew" value="Save" id="newcust">search</button>
+                <div class="mdl-layout-spacer"></div>
               </div>
-</form>
+              
+                <!-- <i class="material-icons">location_on</i> -->
+              </div>
+              
+                <!-- <i class="material-icons">location_on</i> -->
+              </div>
+          </form>
 
             </div>
 

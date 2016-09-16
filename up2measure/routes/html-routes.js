@@ -101,7 +101,7 @@ app.get('/authenticated', function(req,res){
 
 // ----------------------------basic routes
 	app.get('/', function(req, res){
-		res.render('index', {
+		res.render('/index', {
 			
 		});
 	});
@@ -113,7 +113,7 @@ app.get('/authenticated', function(req,res){
 	app.get('/dash', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log(req.user.userId);
-			res.redirect('dash.html', {
+			res.redirect('/dash.html', {
 				
 			});
 		}
@@ -205,7 +205,7 @@ app.get('/retrieveCustomers', function(req, res){
 			console.log("-----------------UserID:---------------------")
 			console.log(req.user.userId);
 		ormdb.retrieveCustomers(req.user.userId, function(err, data){			    
-			console.log("----------------- customer data - HtmlRoutes---------------------")
+			console.log("----------------- retreive customer route - HtmlRoutes---------------------")
 			console.log(data);
 			res.send(data);
 		  });
@@ -219,8 +219,10 @@ app.get('/findCustomer', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log("-----------------UserID:---------------------")
 			console.log(req.user.userId);
+			console.log(req.user.customerNumber);
+
 		ormdb.findCustomer(req.user.userId, function(err, data){			    
-			console.log("----------------- customer data - HtmlRoutes---------------------")
+			console.log("----------------- find customer route - HtmlRoutes---------------------")
 			console.log(data);
 			res.send(data);
 		  });
