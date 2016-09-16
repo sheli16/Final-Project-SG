@@ -162,13 +162,15 @@
               <i class="material-icons">search</i>
             </label>
             <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+              <form>
+              <input class="mdl-textfield__input" type="text" id="search" name="searchTerm" value="">
+              <label class="mdl-textfield__label" for="search">Enter Name or Job Number</label>
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
+          </form>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
             <li class="mdl-menu__item">About</li>
             <li class="mdl-menu__item">Contact</li>
@@ -197,27 +199,27 @@
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--indigo-800">
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Home</a>
+          <a class="mdl-navigation__link" href="" Id="job1"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job2"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job3"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Spam</a>
+          <a class="mdl-navigation__link" href="" Id="job4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job5"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job6"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job7"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job8"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+          <a class="mdl-navigation__link" href="" Id="job9"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
           <div class="mdl-layout-spacer"></div>
           
-          <a class="mdl-navigation__link" href="" Id="job"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i><span class="visuallyhidden">Job</span></a>
+          <a class="mdl-navigation__link" href="" Id="job10"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i><span class="visuallyhidden">Job</span></a>
         </nav>
       </div>
 <!-- Main Section -->
@@ -535,19 +537,7 @@
 
 <!-- My script for LC saving to database-->
 <script type="text/javascript">
-// My script to show image pulled from database
-// $('#show-lc').click(function() {
-//         if (!lc) { showLC(); }
-//       });
 
-// .click(function() {
-// var localStorageKey = 'drawing'
-//     if (localStorage.getItem(localStorageKey)) {
-//       lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
-//     }
-
-//    }
-//  });
 
 var baseURL = "http://localhost:8080"
 // ---------This is our Retrieve image from database Get template---------------------------
@@ -561,22 +551,6 @@ var ShowTempLC = function() {
     });
 }
 
-// -------This function retrieves data from the database-----------------
-// $('#show-lc').click(function() {
-//           // lc.clear();
-        
-//         var msg = "It was sent to route"
-         
-//         $.get("/retrieveTemplate", function(data, status){
-         
-
-//           alert( "Data:" + data);
-//           console.log(data);
-//             // if (!lc) { 
-//               // ShowTempLC(data.jobImage);
-//             // }         
-//           });
-//       });    
 
 $('#show-lc').click(function() {
     // Assign handlers immediately after making the request,
@@ -602,21 +576,11 @@ $.get( "/retrieveTemplate", function(data, status) {
   .always(function(TempDBpar) {
     alert( "finished" );
     console.log(TempDBpar)
+
   });
  
-// Perform other work here ...
- 
-// Set another completion function for the request above
-
 });
          
-
-
-
-        
-          
-
-       
 
 // Send image of template to the database--------------------------
 $("#save-image").click(function() {
@@ -636,16 +600,8 @@ $("#save-image").click(function() {
         $.post("/saveimage", custTemp);
         
         alert( "Data Sent: " + msg );
-                  // $.ajax({
- //                method: "POST",
- //                url: "/saveimage",
- //                data: {templateIMG}
-          
+
           })
-          //    .done(function( msg ) {
-            // var msg = "It was sent to route"
-            //   alert( "Data Sent: " + msg );
-          // });
 
 </script>
 
@@ -745,12 +701,6 @@ $("#save-image").click(function() {
 </form>
 
             </div>
-
-
-                
-              
-
-
 
              <!-- <div id=""></div> -->
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">

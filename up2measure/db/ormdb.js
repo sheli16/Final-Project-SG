@@ -18,6 +18,27 @@ var ormdb = {
         });
     },
 //  Select cusomters from database 
+    findCustomer: function(userId, cbFunction) {
+        var queryString = 'SELECT jobNumb OR jobName FROM jobs WHERE userID=?';
+        console.log('findCustomer: '+ queryString);
+        connection.query(queryString,[userId], function(err, res) {
+            if (err) {
+                console.log(err) 
+                return cbFunction(err)
+            }
+           else{
+            console.log('response:', res)
+            cbFunction(null, res)
+           }
+        });
+    },
+
+
+
+
+
+
+//  Select cusomters from database 
     retrieveCustomers: function(userId, cbFunction) {
         var queryString = 'SELECT jobNumb, jobName FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
         console.log('query retrieveCustomers: '+ queryString);
@@ -59,11 +80,11 @@ var ormdb = {
         });
     },
 // Insert New customer into database
-    insertCust: function(userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT, callback) {
+    insertCust: function(userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT, jobImage, callback) {
         console.log('userId: ' + userId);
-        var queryString = 'INSERT INTO jobs(userId, jobNumb, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft) VALUES (?,?,?,?,?,?,?,?)';
+        var queryString = 'INSERT INTO jobs(userId, jobNumb, jobName, jobAddress, jobMaterial, jobSink, jobEdge, jobSqft, jobImage) VALUES (?,?,?,?,?,?,?,?,?)';
         console.log('query insert: '+ queryString);
-        connection.query(queryString, [userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT], function(err, res) { 
+        connection.query(queryString, [userId, CustNumb, CustName, CustAdd, CustMat, SinkDet, EdgeDet, SQFT, jobImage], function(err, res) { 
             if (err) {
                 console.log(err) 
                 return callback(false, err)

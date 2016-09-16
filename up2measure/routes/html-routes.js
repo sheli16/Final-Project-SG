@@ -160,8 +160,8 @@ app.get('/authenticated', function(req,res){
 		   if (req.isAuthenticated()) {
 			console.log(req.user.userId)
 			console.log(req.body.CustName)
-
-		ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, function(result){			    
+			var imageDefault = "default image"
+		ormdb.insertCust(req.user.userId, req.body.CustNumb, req.body.CustName, req.body.CustAdd, req.body.CustMat,req.body.SinkDet, req.body.EdgeDet, req.body.SQFT, imageDefault, function(result){			    
 				
 		// 		 ormdb.insertCust(req.user.userId, 105, "Jimmy Jam", "2300 Jackson st, LA California", "3cm Quartz", "60/40", "round over", 150, function(result){	
 		res.redirect('/dash.html')
@@ -187,6 +187,7 @@ app.get('/authenticated', function(req,res){
 		   	console.log(req.body.jobNo)
 		   		var customerTemp = req.body.snapshot;
 				var customerNumber = req.body.jobNo;
+
 		// ormdb.insertCust(req.user.userId, req.body, function(result){			    
 		ormdb.updateCustTemplate(req.user.userId, customerNumber, customerTemp, function(result){		
 					res.redirect('/dash.html')
@@ -213,4 +214,20 @@ app.get('/retrieveCustomers', function(req, res){
 			res.redirect('/verify');
 			}
 		});
+
+app.get('/findCustomer', function(req, res){
+		if (req.isAuthenticated()) {
+			console.log("-----------------UserID:---------------------")
+			console.log(req.user.userId);
+		ormdb.findCustomer(req.user.userId, function(err, data){			    
+			console.log("----------------- customer data - HtmlRoutes---------------------")
+			console.log(data);
+			res.send(data);
+		  });
+		}
+		else {
+			res.redirect('/verify');
+			}
+		});
 };
+

@@ -5,22 +5,33 @@ $( document ).ready();
 var loadCustomers = function(){
 $.get( "/retrieveCustomers", function(data, status) {
   alert( "success" );
-  console.log(data)
-  
-
-  $('a#job').text(data[0].jobNumb, data[0].jobName)
+  console.log(data[0].jobNumb)
+  console.log(data[0].jobName)
+ // $('a#job1').text(data[1].jobName)
+  console.log(data[1].jobName)
 })
   .done(function(data) {
-// for (var i= 0; i< data.length;i++)
-//    console.log(data[i].jobName)
-//    $('a#job').text(data[i].jobName)
-
+// $('a#job').each(function(i,data){
+  //for (var i= 0; i< data.length;i++) {
+    // $('a#job').text(data[i].jobName)
+    
+      $('a#job1').text(data[0].jobName)
+      console.log(data[0].jobName)
+       $('a#job2').text(data[1].jobName)
+        $('a#job3').text(data[2].jobName)
+         $('a#job4').text(data[3].jobName)
+          $('a#job5').text(data[4].jobName)
+           $('a#job6').text(data[5].jobName)
+            $('a#job7').text(data[6].jobName)
+            $('a#job8').text(data[7].jobName)
+            $('a#job9').text(data[8].jobName)
+            $('a#job10').text(data[9].jobName)
     alert( "second success" );
     // console.log(TempDBpar)
     // lc.loadSnapshot(TempDBpar)
     // return TempDBpar;
-    
-  })
+    })
+
   .fail(function() {
     console.log()
     alert( "error" );
@@ -32,6 +43,35 @@ $.get( "/retrieveCustomers", function(data, status) {
   });
 };
 
+$("#save-image").click(function() {
+var searchTerm	$("#search").val()
+$.get( "/findCustomer", function(data, status) {
+  alert( "success" );
+ //  console.log(data[0].jobNumb)
+ //  console.log(data[0].jobName)
+ // // $('').text(data[1].jobName)
+ //  console.log(data[1].jobName)
+})
+  .done(function(data) {
+// $('a#job').each(function(i,data){
+  //for (var i= 0; i< data.length;i++) {
+    // $('a#job').text(data[i].jobName)
+    alert( "second success" );
+     
+    // console.log(TempDBpar)
+    // lc.loadSnapshot(TempDBpar)
+    // return TempDBpar;
+    })
+
+  .fail(function() {
+    console.log()
+    alert( "error" );
+    
+  })
+  .always(function() {
+    alert( "finished" );
+    console.log()
+  });
+});
 
 loadCustomers();
-
