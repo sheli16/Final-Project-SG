@@ -18,10 +18,10 @@ var ormdb = {
         });
     },
 //  Select cusomters from database 
-    findCustomer: function(userId, cbFunction) {
-        var queryString = 'SELECT jobNumb OR jobName FROM jobs WHERE userID=?';
+    findCustomer: function(userId, jobName, cbFunction) {
+        var queryString = 'SELECT * FROM jobs WHERE userID=? AND jobName=?';
         console.log('findCustomer: '+ queryString);
-        connection.query(queryString,[userId], function(err, res) {
+        connection.query(queryString,[userId, jobName], function(err, res) {
             if (err) {
                 console.log(err) 
                 return cbFunction(err)
@@ -40,7 +40,7 @@ var ormdb = {
 
 //  Select cusomters from database 
     retrieveCustomers: function(userId, cbFunction) {
-        var queryString = 'SELECT jobNumb, jobName FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
+        var queryString = 'SELECT jobNumb, jobName, jobAddress, jobMaterial, jobMaterial, jobSink, jobEdge, jobSqft FROM jobs WHERE userID=? ORDER BY jobNumb DESC LIMIT 10';
         console.log('query retrieveCustomers: '+ queryString);
         connection.query(queryString,[userId], function(err, res) {
             if (err) {
