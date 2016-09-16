@@ -205,7 +205,7 @@ app.get('/retrieveCustomers', function(req, res){
 			console.log("-----------------UserID:---------------------")
 			console.log(req.user.userId);
 		ormdb.retrieveCustomers(req.user.userId, function(err, data){			    
-			console.log("----------------- retreive customer route - HtmlRoutes---------------------")
+			console.log("----------------- retreive customers route - HtmlRoutes---------------------")
 			console.log(data);
 			res.send(data);
 		  });
@@ -215,13 +215,17 @@ app.get('/retrieveCustomers', function(req, res){
 			}
 		});
 
-app.get('/findCustomer', function(req, res){
+app.post('/findCustomer', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log("-----------------UserID:---------------------")
-			console.log(req.user.userId);
-			console.log(req.user.customerNumber);
+			console.log(req.user.userId)
+			console.log("##############posted to Route#################")
+		   	console.log("-----------------req.body.customerName:---------------------")
+			console.log(req.);
+			console.log(req.body.customerName);
 
-		ormdb.findCustomer(req.user.userId, function(err, data){			    
+
+		ormdb.findCustomer(req.user.userId, req.body.customer, function(err, data){			    
 			console.log("----------------- find customer route - HtmlRoutes---------------------")
 			console.log(data);
 			res.send(data);
