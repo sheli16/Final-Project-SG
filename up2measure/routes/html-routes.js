@@ -122,12 +122,13 @@ app.get('/authenticated', function(req,res){
 			}
 	});
 	
-	app.get('/retrieveTemplate', function(req, res){
+	app.post('/retrieveTemplate', function(req, res){
 		if (req.isAuthenticated()) {
 			console.log(req.user.userId);
 			console.log("-----------------customer number:---------------------")
-			var customerNumber = 107;
-			console.log(customerNumber)
+			console.log(req.body)
+			var customerNumber = req.body.jobNo;
+			
 		ormdb.retrieveTempJSON(req.user.userId, customerNumber, function(err, data){			    
 			console.log("----------------- image:data - HtmlRoutes---------------------")
 			console.log(data);
@@ -183,7 +184,7 @@ app.get('/authenticated', function(req,res){
 			console.log("##############posted to Route#################")
 		   	console.log("-----------------req.body.snapshot:---------------------")
 		    console.log(req.body.snapshot)
-		   	console.log("-----------------req.body.snapshot:---------------------")
+		   	console.log("-----------------req.body.jobNo:---------------------")
 		   	console.log(req.body.jobNo)
 		   		var customerTemp = req.body.snapshot;
 				var customerNumber = req.body.jobNo;
