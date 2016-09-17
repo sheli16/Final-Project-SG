@@ -221,14 +221,14 @@ app.post('/findCustomer', function(req, res){
 			console.log(req.user.userId)
 			console.log("##############posted to Route#################")
 		   	console.log("-----------------req.body.customerName:---------------------")
-			console.log(req.);
 			console.log(req.body.customerName);
+			var customerNm = req.body.customerName;
 
-
-		ormdb.findCustomer(req.user.userId, req.body.customer, function(err, data){			    
+		ormdb.findCustomer(req.user.userId, req.body.customerName, function(err, data){			    
 			console.log("----------------- find customer route - HtmlRoutes---------------------")
 			console.log(data);
 			res.send(data);
+			
 		  });
 		}
 		else {

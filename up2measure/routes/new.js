@@ -30,3 +30,5 @@
 
 
     (column1 LIKE '%this%' OR column1 LIKE '%that%') AND something=else
+
+    $('#loadDB').on('click', function(){

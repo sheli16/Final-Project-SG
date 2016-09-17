@@ -1,6 +1,6 @@
-$( document ).ready();
+// $( document ).ready();
     // Assign handlers immediately after making the request,
-// and remember the jqxhr object for this request
+
 
 var loadCustomers = function(){
 $.get( "/retrieveCustomers", function(data, status) {
@@ -40,16 +40,16 @@ $.get( "/retrieveCustomers", function(data, status) {
   })
   .always(function(data) {
 // Display in address Card
-		$('#customernumber').text(data[0].jobNumb)
-		$('#customername').text(data[0].jobName)
-		$('#customeraddress').text(data[0].jobAddress)
-		console.log(data[0].jobAddress)
-		// Display in Job detsils
-		$('#Material').text(data[0].jobMaterial)
-		$('#Sink').text(data[0].jobSink)
-		$('#Edge').text(data[0].jobEdge)
-		console.log(data[0].jobEdge)
-		$('#SqFt').text(data[0].jobSqFt)
+		// $('#customernumber').text(data[0].jobNumb)
+		// $('#customername').text(data[0].jobName)
+		// $('#customeraddress').text(data[0].jobAddress)
+		// console.log(data[0].jobAddress)
+		// // Display in Job detsils
+		// $('#Material').text(data[0].jobMaterial)
+		// $('#Sink').text(data[0].jobSink)
+		// $('#Edge').text(data[0].jobEdge)
+		// console.log(data[0].jobEdge)
+		// $('#SqFt').text(data[0].jobSqFt)
     alert( "finished" );
     console.log()
 
@@ -68,7 +68,6 @@ function GetTodayDate() {
 
 GetTodayDate();
 loadCustomers();
-
 
 // Drawer database Link
 
@@ -113,9 +112,11 @@ $('a#job1').click(function(){
       	
 
 $('a#job2').click(function(){
+
 	var cn = $('a#job2').text()
 		alert(cn)
 	console.log(cn)
+	
 	var cn = $('a#job2').text()
 	var cnFind ={
 		customerName:cn	
@@ -146,6 +147,9 @@ $.post( "/findCustomer", cnFind, function(data, status) {
     alert( "error" );
   })
   .always(function() {
+
+
+
     alert( "finished" );
   });
 		// findCustomer(cnFind);
@@ -153,7 +157,13 @@ $.post( "/findCustomer", cnFind, function(data, status) {
       
  $('a#job3').click(function(){
 	var cn = $('a#job3').text()
-		findCustomer(cn);
+	var cnFind ={
+		customerName:cn	
+		}
+		alert(cnFind)
+		console.log(cnFind)
+
+		findCustomer(cnFind);
 		})
 $('a#job4').click(function(){
 	var cn = $('a#job4').text()
@@ -184,6 +194,10 @@ $('a#job10').click(function(){
 	var cn = $('a#job10').text()
 		findCustomer(cn);
 		}) 
+$('button#loadc').click(function(){
+	theDOM = $('html').clone(true);
+	loadCustomers();
+		}) 
 
 
 // var customerName = 
@@ -206,7 +220,7 @@ $('a#job10').click(function(){
 var findCustomer = function(cnFind){
 	alert(cnFind + "findcustomer");
 
-$.get( "/findCustomer", cnFind, function(data, status) {
+$.post( "/findCustomer", cnFind, function(data, status) {
  
   alert( "success finding your customer");
   console.log(data)
@@ -223,6 +237,13 @@ $.get( "/findCustomer", cnFind, function(data, status) {
 		$('#Edge').text(data[0].jobEdge)
 		console.log(data[0].jobEdge)
 		$('#SqFt').text(data[0].jobSqFt)
+
+var source   = $('#customernumber').html();
+var template = Handlebars.compile(source);
+var context = {Number: data[0].jobNumb};
+var html    = template(context);
+
+
   })
   .fail(function() {
     alert( "error" );
@@ -233,7 +254,12 @@ $.get( "/findCustomer", cnFind, function(data, status) {
 }
 
 
-
+window.onbeforeunload = function() {
+        sessionStorage.setItem("numb", $('#customernumber').val());
+        sessionStorage.setItem("nam", $('#customername').val());
+        sessionStorage.setItem("add", $('#customeraddress').val());
+        sessionStorage.setItem("message", $('#inputMessage').val());
+    }
 
 // }) 
 // })	 
