@@ -22,7 +22,7 @@ CREATE TABLE jobs(
     jobSink varchar(30) NOT NULL DEFAULT '{}',
     jobEdge varchar(30) NOT NULL DEFAULT '{}',
     jobSqft integer(10) NOT NULL DEFAULT '{}',
-    jobImage varchar(10000) NOT NULL DEFAULT '{}'
+    jobImage blob
    
     -- PRIMARY KEY (id)
  

@@ -1,19 +1,30 @@
-body{
-	background-color:#190099;
-	text-align: center;
-	color:#fffff;
-	
-}
+
 #usernameContainer {
-	margin-top: 20ex;
+	margin-top: 12%;
+
 }
 
 .authInputs input {
 	width: 100%;
 	font-size: 15pt
 	background-color:#dccd38;
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Lobster', cursive;
 }
-button{
-	background-color:#cddc38; 
 
+#submituser{
+	background-color:#ffffff
+
+}
+.btn-success{
+background-color:#ffc107
+border-color: #ffc107
+}
+
+body{
+	background-color:#190099;
+	align: center;
+	color:#cddc39;
+	font-family: 'Roboto', sans-serif;
+	
 }
