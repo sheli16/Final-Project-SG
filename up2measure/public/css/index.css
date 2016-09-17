@@ -1,8 +1,19 @@
+body{
+	background-color:#190099;
+	text-align: center;
+	color:#fffff;
+	
+}
 #usernameContainer {
-	margin-top: 30ex;
+	margin-top: 20ex;
 }
 
 .authInputs input {
 	width: 100%;
-	font-size: 20pt
+	font-size: 15pt
+	background-color:#dccd38;
+}
+button{
+	background-color:#cddc38; 
+
 }
