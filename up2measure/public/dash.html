@@ -158,9 +158,7 @@
           <span class="mdl-layout-title">Is your Business TOP Notch. Is your business up to measure?</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
+            
             <div class="mdl-textfield__expandable-holder">
               <form>
               <input class="mdl-textfield__input" type="text"  type="submit">
@@ -186,17 +184,12 @@
         <header class="demo-drawer-header">
           <img src="./img/logos/topnotch_logoWHT.png" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span>view order</span>
+            <!-- <div name="customerDate" id="customerDate">
+             Date<br></div> -->
             <div class="mdl-layout-spacer"></div>
-            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-              <i class="material-icons" role="presentation">arrow_drop_down</i>
-              <span class="visuallyhidden">Accounts</span>
-            </button>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item">hello@example.com</li>
-              <li class="mdl-menu__item">info@example.com</li>
-              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-            </ul>
+            <div class="mdl-layout-spacer"></div>
+
+        
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--indigo-800">
@@ -217,17 +210,15 @@
           <a class="mdl-navigation__link" href="" Id="job8"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
           
           <a class="mdl-navigation__link" href="" Id="job9"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
-          
-          <div class="mdl-layout-spacer"></div>
-          
-          <a class="mdl-navigation__link" href="" Id="job10"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i><span class="visuallyhidden">Job</span></a>
-        </nav>
+
+          <a class="mdl-navigation__link" href="" Id="job10"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Job</a>
+         </nav>
       </div>
 <!-- Main Section -->
       <main class="mdl-layout__content mdl-color--white">
         <div class="mdl-grid demo-content"> 
 <!--  -->
-          <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <!-- <div class="demo-charts mdl-color--lime mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
 
          <div class="demo-card-event mdl-card mdl-shadow--2dp">
           <div class="mdl-card__title mdl-card--expand">
@@ -255,19 +246,16 @@
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
 <div id="map"></div>
 <!-- <iframe width="600" height="450" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/search?q="+ Address +"keyAIzaSyBNEmW7U-AfboFqYnWGp6PPoqtF-Wofiao" allowfullscreen></iframe> -->
-  <div class="mdl-card__menu">
+ <!--  <div class="mdl-card__menu">
     <button id="loadc" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
       <i class="material-icons">share</i>
     </button>
   </div>
   </div>
-
-<!-- Google Map -->
           
-           </div>
-<!--  -->
+           </div>  -->
        
-          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--9-col">
 
 <!-- Start litterally Canvas html -->
          <div class="fs-container">
@@ -278,16 +266,17 @@
 
         <!-- <a href="javascript:void(0);" class='tool' id="save-image" action="/saveTemplate" method="post">Save image</a> -->
         <a href="javascript:void(0);" class='tool' id="save-image">Save image</a>
-        <a href="javascript:void(0);" class='tool' id="change-size">Change size</a>
-        <a href="javascript:void(0);" class='tool' id="reset-size">Reset size</a>
-        <a href="javascript:void(0);" class='tool' id="hide-lc">Hide or Teardown</a>
+       <!--  <a href="javascript:void(0);" class='tool' id="change-size">Change size</a>
+        <a href="javascript:void(0);" class='tool' id="reset-size">Reset size</a> -->
+        <!-- <a href="javascsript:void(0);" class='tool' id="hide-lc">Hide or Teardown</a> -->
         <a href="javascript:void(0);" class='tool' id="show-lc">Open Template</a>
-        <a href="javascript:void(0);" class='tool' id="clear-lc">Clear or New Template</a>
+        <a href="javascript:void(0);" class='tool' id="clear-lc">Delete</a>
+        <a href="javascript:void(0);" class='tool' id="tool-select">Select Item</a>
       </div>
 
-      <div class="toolset">
-        <span class='toolLabel'>Tools:</span>
-        <a href="javascript:void(0);" class='tool' id="tool-pencil">Pencil</a>
+      <!-- <div class="toolset">
+        <span class='toolLabel'>Tools:</span> -->
+       <!--  <a href="javascript:void(0);" class='tool' id="tool-pencil">Pencil</a>
         <a href="javascript:void(0);" class='tool' id="tool-eraser">Eraser</a>
         <a href="javascript:void(0);" class='tool' id="tool-text">Text</a>
         <a href="javascript:void(0);" class='tool' id="tool-line">Line</a>
@@ -295,16 +284,16 @@
         <a href="javascript:void(0);" class='tool' id="tool-dashed">Dashed Line</a>
         <a href="javascript:void(0);" class='tool' id="tool-ellipse">Ellipse</a>
         <a href="javascript:void(0);" class='tool' id="tool-rectangle">Rectangle</a>
-        <a href="javascript:void(0);" class='tool' id="tool-polygon">Polygon</a>
-        <a href="javascript:void(0);" class='tool' id="tool-select">Select</a>
-      </div>
+        <a href="javascript:void(0);" class='tool' id="tool-polygon">Polygon</a> -->
+        
+     <!--  </div> -->
 
-      <div class="toolset" id="tools-colors">
+      <!-- <div class="toolset" id="tools-colors">
         <span class='toolLabel'>Colors:</span>
         <a href="javascript:void(0);" class='tool' id="colorTool-black">Black</a>
         <a href="javascript:void(0);" class='tool' id="colorTool-blue">Blue</a>
         <a href="javascript:void(0);" class='tool' id="colorTool-red">Red</a>
-      </div>
+      </div> -->
         <br>
      <!--  <div class="svg-container"
           style="display: inline-block; border: 1px solid yellow"></div> -->
@@ -608,13 +597,13 @@ $("#save-image").click(function() {
 <!--End litterally Canvas  -->
           </div>
 
-          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">        
+          <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-grid mdl-grid--no-spacing">        
 <!-- Job specs -->
             
-            <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
-              <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+<!--             <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50"> -->
                 
-<div class="demo-list-action mdl-list">
+<!-- <div class="demo-list-action mdl-list">
 <h3>Job Specs</h3>
   <div class="mdl-list__item">
 
@@ -678,12 +667,12 @@ $("#save-image").click(function() {
                 <div class="mdl-layout-spacer"></div>
                 <i class="material-icons">location_on</i>
               </div>
-            </div>
+            </div> -->
             
-              <div class="demo-separator mdl-cell--1-col"></div>
+              <!-- <div class="demo-separator mdl-cell--1-col"></div> -->
 
-            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-             <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+             <div class="demo-options mdl-card mdl-color--lime-500 mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__supporting-text mdl-color-text--lime-50">
                 <h3>Add New Customer</h3>
                 
@@ -739,7 +728,7 @@ $("#save-image").click(function() {
             </div>
 
              <!-- <div id=""></div> -->
-              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+              <!-- <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
                 <h2 class="mdl-card__title-text">Updates</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -747,7 +736,7 @@ $("#save-image").click(function() {
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="#" id="test" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
